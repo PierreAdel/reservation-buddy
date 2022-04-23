@@ -2,6 +2,8 @@ module Api
     module V1
     class HotelsController < ApplicationController
         protect_from_forgery with: :null_session
+        before_action :authenticate_user, only: [:show]
+
         def index
             hotels = Hotel.all
             render json: HotelSerializer.new(hotels).serialized_json
@@ -45,6 +47,12 @@ module Api
         def hotel_params
             params.require(:hotel).permit(:name, :cover_image_url)
         end
+
+        def authenticate_user
+            unless helpers.logged_in?
+              render json: { errors: "Not Authorized" }, status: :unauthorized
+            end
+          end
 
         # def options 
         #     @options ||= {include: %i[admins]}
