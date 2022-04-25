@@ -1,0 +1,524 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: grey;
+}
+.HomeContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.HotelCard {
+  background-color: #bdfbff;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.HotelImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-image: url(${LoginImage}); */
+  /* background-image: url("../../assets/bg2.jpg"); */
+  background-color: #cccccc;
+
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: contain; */
+  height: 200px;
+  width: 18%;
+  border-radius: 10px;
+}
+
+.InputArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.SearchArea {
+  width: 1200px;
+  align-self: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+}
+
+.Logo {
+  /* background-image: url(${LoginImage}); */
+  /* background-image: url("../../assets/bg2.jpg"); */
+  /* background-color: #cccccc; */
+
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  height: 35px;
+  width: 35px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.NavigationBar {
+  background-color: #fff;
+  width: 1200px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0;
+  /* @media (max-width: 480px) {
+      height: 60px;
+    } */
+}
+
+.InfoCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.InfoCard {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.InfoImage {
+  /* background-image: url(${(props) => props.src}); */
+  /* background-image: url("../../assets/bg2.jpg"); */
+  /* background-color:   #cccccc; */
+
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+}
+.InfoText {
+  margin: 0 15px;
+}
+.ReserveCardTextArea {
+  width: 55%;
+}
+.InfoTextHeader {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e07751;
+}
+.ReserveCardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 7px 0;
+}
+.ReserveCardParagraph {
+  font-size: 14px;
+  line-height: 150%;
+}
+.ReserveCardScore {
+  font-size: 14px;
+  color: #e07751;
+  font-weight: 600;
+}
+.InfoTextParagraph {
+  font-size: 14px;
+}
+.ReserveButton {
+  width: 20%;
+  border-radius: 20px;
+  background-color: #e07751;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.PastReservedButton {
+  width: 20%;
+  border-radius: 20px;
+  background-color: grey;
+  opacity: 0.5;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: no-drop;
+}
+.LineArea {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 1200px;
+  padding: 20px 0;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.CardImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-image: url(${(props)=>props.src}); */
+  /* background-image: url("../../assets/bg2.jpg"); */
+  background-color: lightgrey;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 125px;
+  border-radius: 5px;
+  width: 100%;
+}
+.HotelCardImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-image: url(${(props)=>props.src}); */
+  /* background-image: url("../../assets/bg2.jpg"); */
+  /* background-color: lightgrey; */
+
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  height: 275px;
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.CardText {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.CardTextSmall {
+  margin-top: 5px;
+  font-size: 14px;
+  color: grey;
+}
+.Cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.Card {
+  width: 15.5%;
+  cursor: pointer;
+}
+.PropertyCard {
+  width: 18.5%;
+  cursor: pointer;
+}
+.MiddleArea {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Popular {
+  width: 1200px;
+  align-self: center;
+}
+.Hero {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* background-image: url(${LoginImage}); */
+  background-image: url("../../../../assets/images/bg2.jpg");
+  background-color: #cccccc;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.SearchInput {
+  padding: 12px 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid grey;
+  background-color: #f6f4f3;
+  width: 21%;
+}
+.SearchInput:focus {
+  border: 1px solid #e07751;
+}
+.SearchButton {
+  box-sizing: border-box;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  color: white;
+  background: #e07751;
+  width: 12%;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.SearchTitleText {
+  color: #e07751;
+  padding: 0;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.PopularText {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+.KhatTitleText {
+  font-size: 22px;
+}
+
+@media (min-width: 1024px) and (max-width: 1350px) {
+  .NavigationBar {
+    width: 95%;
+  }
+  .SearchArea {
+    width: 95%;
+  }
+  .LineArea {
+    width: 95%;
+  }
+  .Popular {
+    width: 95%;
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  .NavigationBar {
+    width: 95%;
+  }
+  .SearchArea {
+    width: 95%;
+  }
+  .LineArea {
+    width: 95%;
+  }
+  .Popular {
+    width: 95%;
+  }
+  .SearchInput {
+    width: 26%;
+  }
+  .SearchButton {
+    width: 15%;
+  }
+
+  .Cards {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
+  .Card {
+    width: 32%;
+    margin-bottom: 20px;
+  }
+  .Card:nth-child(5),
+  .Card:last-child,
+  .Card:nth-child(4) {
+    margin-bottom: 0;
+  }
+  .CardImage {
+    height: 150px;
+  }
+
+  .PropertyCard {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .ReserveCardTextArea {
+    width: 72%;
+  }
+  .HotelImage {
+    width: 25%;
+    height: 175px;
+  }
+  .ReserveButton {
+    width: 35%;
+    padding: 15px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .PastReservedButton {
+    width: 50%;
+    padding: 15px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .HotelCard {
+    background-color: #bdfbff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .NavigationBar {
+    width: 95%;
+  }
+  .SearchArea {
+    width: 95%;
+  }
+  .LineArea {
+    width: 95%;
+  }
+  .Popular {
+    width: 95%;
+  }
+  .SearchInput {
+    width: 26%;
+  }
+  .SearchButton {
+    width: 15%;
+  }
+
+  .Cards {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
+  .Card {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  .Card:last-child {
+    margin-bottom: 0;
+  }
+  .Card:nth-child(5) {
+    margin-bottom: 0;
+  }
+
+  .CardImage {
+    height: 150px;
+  }
+
+  .InfoCards {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .InfoCard {
+    width: fit-content;
+    margin-bottom: 20px;
+  }
+  .InfoCard:last-child {
+    margin-bottom: 0;
+  }
+  .PropertyCard {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .ReserveCardTextArea {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .HotelImage {
+    width: 70%;
+    height: 175px;
+    margin: auto;
+  }
+  .ReserveButton {
+    width: 70%;
+    padding: 15px;
+    margin: auto;
+  }
+  .PastReservedButton {
+    width: 70%;
+    padding: 15px;
+    margin: auto;
+  }
+  .HotelCard {
+    background-color: #bdfbff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .NavigationBar {
+    width: 95%;
+  }
+  .SearchArea {
+    width: 95%;
+  }
+  .LineArea {
+    width: 95%;
+  }
+  .Popular {
+    width: 95%;
+  }
+  .InputArea {
+    flex-direction: column;
+  }
+  .SearchInput {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .SearchButton {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .Cards {
+    flex-direction: column;
+  }
+  .Card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .Card:last-child {
+    margin-bottom: 0px;
+  }
+  .CardImage {
+    height: 200px;
+  }
+  .InfoCards {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .InfoCard {
+    width: fit-content;
+    margin-bottom: 20px;
+  }
+  .InfoCard:last-child {
+    margin-bottom: 0;
+  }
+  .PropertyCard {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
