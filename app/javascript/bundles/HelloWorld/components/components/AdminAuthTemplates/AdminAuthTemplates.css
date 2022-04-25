@@ -1,0 +1,50 @@
+.text {
+  padding: 0;
+  margin: 0;
+}
+
+.Container {
+  box-sizing: border-box;
+}
+
+.CenterDiv {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -45%);
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background-color: #fff;
+  width: 600px;
+  height: auto;
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-family: arial, sans-serif;
+  border-radius: 10px;
+
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1368px) {
+  .CenterDiv {
+    width: 650px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .CenterDiv {
+    width: 85%;
+    padding: 30px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .CenterDiv {
+    width: 90%;
+    padding: 20px;
+  }
+}
