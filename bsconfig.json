@@ -1,0 +1,29 @@
+{
+  "name": "your-project-name",
+  "sources": [
+    {
+      "dir": "app/javascript",
+      "subdirs": true
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "reason": { "react-jsx": 3 },
+  "bs-dependencies": [
+    "@rescript/react",
+    "re-formality",
+    "bs-fetch",
+    "bs-axios",
+    "@glennsl/bs-json",
+    "@rescript/react",
+    "@rescriptbr/react-query",
+    "decco",
+    "@ryyppy/rescript-promise"
+  ],
+  "ppx-flags": ["re-formality/ppx", "decco/ppx"]
+}
