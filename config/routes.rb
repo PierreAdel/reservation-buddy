@@ -1,19 +1,31 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
+  get '', to: 'hello_world#index'
   root 'pages#index'
 
   namespace :api do
     namespace :v1 do
       resources :sessions, only: [:create]
       resources :registrations, only: [:create]
-      delete '/sessions/logout', to: "sessions#logout"
-      get "sessions/logged_in", to: "sessions#logged_in"
+
+      post '/sessions/admin_login', to: "sessions#admin_login"
+      post "sessions/user_login", to: "sessions#user_login"
+
+      delete '/sessions/admin_logout', to: "sessions#admin_logout"
+      delete '/sessions/user_logout', to: "sessions#user_logout"
+
+      get "/sessions/admin_logged_in", to: "sessions#admin_logged_in"
+      get "/sessions/user_logged_in", to: "sessions#user_logged_in"
+
       resources :hotels, param: :slug
-      resources :reservations, only: [:index, :show]
+      # resources :reservations, only: [:create], param: :slug
+      get "/reservations", to: "reservations#get_all_reservations"
+      get "/reservations/my_reservations", to: "reservations#get_all_my_reservations"
+      post "/reservations/:slug", to: "reservations#create"
+
       resources :admins, only: [:index, :show]
       resources :customers, only: [:index, :show]
     end
   end
 
-  get '*path', to: 'pages#index', via: :all
+  get '*path', to: 'hello_world#index', via: :all
 end
