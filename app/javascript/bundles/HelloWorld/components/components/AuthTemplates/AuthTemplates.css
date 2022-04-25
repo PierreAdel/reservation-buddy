@@ -1,0 +1,94 @@
+.Text {
+  padding: 0;
+  margin: 0;
+}
+
+.Container {
+  box-sizing: border-box;
+}
+
+.Center {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -45%);
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background-color: #fff;
+  width: 1000px;
+  height: auto;
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-family: arial, sans-serif;
+  border-radius: 10px;
+  /* @media only screen and (max-width: 1368px) {
+    width: 80%;
+  }
+  @media only screen and (max-width: 480px) {
+    width: 90%;
+  } */
+}
+
+.LeftContainer {
+  width: 50%;
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  /* @media (min-width: 1024px) and (max-width: 1350px) {
+    width: 50%;
+  }
+  @media (min-width: 767px) and (max-width: 1024px) {
+    width: 50%;
+  }
+  @media (min-width: 480px) and (max-width: 767px) {
+    width: 100%;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+  } */
+}
+
+.RightContainer {
+  width: 50%;
+  box-sizing: border-box;
+  background-image: url("../../../../../../assets/images/bg.jpg");
+  background-color: #cccccc;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media only screen and (max-width: 1368px) {
+  .Center {
+    width: 850px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .Center {
+    width: 85%;
+  }
+  .LeftContainer {
+    width: 100%;
+    padding: 30px;
+  }
+  .RightContainer {
+    width: 0%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .Center {
+    width: 90%;
+  }
+  .LeftContainer {
+    padding: 20px;
+  }
+}
