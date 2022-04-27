@@ -5,7 +5,7 @@ let make = () => {
   let client = ReactQuery.Provider.createClient()
   <ReactQuery.Provider client>
     {switch url.path {
-    | list{} => <Home />
+    | list{} => <AdminGuard> <Home /> </AdminGuard>
     | list{"login"} => <UserGuard> <AdminGuard> <Login /> </AdminGuard> </UserGuard>
     | list{"register"} => <UserGuard> <AdminGuard> <Register /> </AdminGuard> </UserGuard>
     | list{"admin_login"} => <UserGuard> <AdminGuard> <AdminLogin /> </AdminGuard> </UserGuard>
