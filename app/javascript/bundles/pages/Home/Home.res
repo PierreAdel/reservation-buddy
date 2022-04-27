@@ -1,9 +1,7 @@
-%%raw("import './Home.css'")
-
 // type person = {"completed": bool, "id": int, "title": string, "userId": int}
+%%raw("import './Home.css'")
 @react.component
 let make = () => {
-  let url = RescriptReactRouter.useUrl()
   let (city, setCity) = React.useState(_ => "")
   let (dateFrom, setDateFrom) = React.useState(_ => "")
   let (numOfNights, setNumOfNights) = React.useState(_ => 0)
