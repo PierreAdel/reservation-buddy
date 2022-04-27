@@ -1,5 +1,4 @@
 open Session
-open Endpoints
 
 module Fetchs = {
   type response

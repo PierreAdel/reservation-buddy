@@ -1,5 +1,4 @@
 open Customer
-open Endpoints
 
 module Fetch = {
   type response
