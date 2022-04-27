@@ -80,29 +80,6 @@ module Api
                  status: :unauthorized
         end
       end
-
-      # def create
-      #     Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
-
-      #     order = Order.find(params[:orderId])
-      #     amount = order.shoes.sum(:cost) * 100
-
-      #     charge = Stripe::Charge.create(
-
-      #         :amount => amount,
-      #         :desc => "OG store",
-      #         :currency => "usd",
-      #         :source => params[:token]
-      #     )
-
-      # rescue Stripe::CardError => e
-      #     render json: {error:"erer"}, status: 500
-      # end
-      # end
-
-      def update; end
-
-      def destroy; end
     end
   end
 end
