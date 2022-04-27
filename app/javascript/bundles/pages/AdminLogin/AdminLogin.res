@@ -1,5 +1,4 @@
 %%raw("import './AdminLogin.css'")
-
 @react.component
 let make = () => {
   let title = "Login"
@@ -17,11 +16,11 @@ let make = () => {
     setPassword(newValue)
   }
 
-  let handleSubmit = e => {
+  let handleSubmit = _ => {
     let payload = Js.Dict.empty()
     Js.Dict.set(payload, "email", Js.Json.string(email))
     Js.Dict.set(payload, "password", Js.Json.string(password))
-    let x =
+    let _ =
       Fetch.fetchWithInit(
         `/api/v1/sessions/admin_login`,
         Fetch.RequestInit.make(
@@ -30,10 +29,12 @@ let make = () => {
           ~headers=Fetch.HeadersInit.make({"Content-Type": "application/json"}),
           (),
         ),
-      )->Js.Promise.then_(Fetch.Response.json, _)
+      )
+      ->Js.Promise.then_(_ => Js.Promise.resolve(Fetch.Response.json), _)
+      ->Js.Promise.then_(_ => Js.Promise.resolve(RescriptReactRouter.replace("/admin")), _)
     setPassword(_ => "")
     setEmail(_ => "")
-    RescriptReactRouter.replace("/admin")
+    // RescriptReactRouter.replace("/admin")
   }
 
   <AdminAuthTemplates title={title} secondryTitle={secondry_title}>
@@ -66,13 +67,13 @@ let make = () => {
     <button onClick={handleSubmit} className={"Button"} type_={"submit"}>
       {title->React.string}
     </button>
-    <div className={"Row"}>
-      <p
-        className={"Text"}
-        style={ReactDOM.Style.make(~cursor="pointer", ~fontSize="16px", ~color="grey", ())}
-        onClick={_ => RescriptReactRouter.push("/register")}>
-        {"New User? Register"->React.string}
-      </p>
-    </div>
+    // <div className={"Row"}>
+    //   <p
+    //     className={"Text"}
+    //     style={ReactDOM.Style.make(~cursor="pointer", ~fontSize="16px", ~color="grey", ())}
+    //     onClick={_ => RescriptReactRouter.push("/register")}>
+    //     {"New User? Register"->React.string}
+    //   </p>
+    // </div>
   </AdminAuthTemplates>
 }
