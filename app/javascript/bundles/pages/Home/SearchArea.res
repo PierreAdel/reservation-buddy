@@ -2,10 +2,10 @@
 let make = (
   ~city: string,
   ~dateFrom: string,
-  ~dateTo: string,
+  ~numOfNights: int,
   ~handleChange,
   ~handleChangeFrom,
-  ~handleChangeTo,
+  ~handleChangeNumOfNights,
 ) => {
   <div className={"Hero"}>
     <div className={"SearchArea"}>
@@ -24,10 +24,16 @@ let make = (
         <input
           className={"SearchInput"} value={dateFrom} onChange={handleChangeFrom} type_="date"
         />
-        <input className={"SearchInput"} value={dateTo} onChange={handleChangeTo} type_="date" />
+        <input
+          placeholder="Number of nights"
+          className={"SearchInput"}
+          value={numOfNights->Belt.Int.toString}
+          onChange={handleChangeNumOfNights}
+          type_="number"
+        />
         <button
           className={"SearchButton"}
-          disabled={city == "" || dateFrom == "" || dateTo == ""}
+          disabled={city == "" || dateFrom == "" || numOfNights <= 0}
           type_="submit">
           {"Search"->React.string}
         </button>

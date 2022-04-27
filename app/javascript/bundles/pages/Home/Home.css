@@ -62,9 +62,9 @@ a {
   /* background-position: center; */
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
-  height: 35px;
-  width: 35px;
-  border-radius: 20px;
+  aspect-ratio: 1.1/1;
+  width: 45px;
+  border-radius: 100%;
   cursor: pointer;
 }
 
@@ -136,6 +136,12 @@ a {
   font-size: 14px;
   color: #e07751;
   font-weight: 600;
+}
+.ReserveCardCity {
+  font-size: 14px;
+  color: grey;
+  font-weight: 500;
+  margin-top: 5px;
 }
 .InfoTextParagraph {
   font-size: 14px;
