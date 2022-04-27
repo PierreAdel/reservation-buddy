@@ -59,7 +59,7 @@ let make = (~clicked) => {
     },
   ]
 
-  let handleAdd = e => {
+  let handleAdd = _ => {
     let payload = Js.Dict.empty()
     Js.Dict.set(payload, "hotel_name", Js.Json.string(hotelName))
     Js.Dict.set(payload, "description", Js.Json.string(hotelDescription))
@@ -67,7 +67,7 @@ let make = (~clicked) => {
     Js.Dict.set(payload, "cover_image_url", Js.Json.string(coverImageUrl))
     Js.Dict.set(payload, "city", Js.Json.string(city))
     Js.Dict.set(payload, "score", Js.Json.string(score->Belt.Float.toString))
-    let x =
+    let _ =
       Fetch.fetchWithInit(
         `/api/v1/hotels`,
         Fetch.RequestInit.make(
@@ -91,16 +91,18 @@ let make = (~clicked) => {
     <div className={"GenericForm"}>
       <p className={"GenericFormTitle"}> {"Add hotel form"->React.string} </p>
       {arr
-      ->Belt.Array.map(el => <>
-        <p className={"Label"}> {(el.label ++ " *")->React.string} </p>
-        <input
-          onChange={el.handleChange}
-          value={el.value}
-          type_={el.type_}
-          className={"UpperTableInput"}
-          placeholder={el.label}
-        />
-      </>)
+      ->Belt.Array.map(el =>
+        <div key={el.label}>
+          <p className={"Label"}> {(el.label ++ " *")->React.string} </p>
+          <input
+            onChange={el.handleChange}
+            value={el.value}
+            type_={el.type_}
+            className={"UpperTableInput"}
+            placeholder={el.label}
+          />
+        </div>
+      )
       ->React.array}
       <button
         disabled={isDisabled()}

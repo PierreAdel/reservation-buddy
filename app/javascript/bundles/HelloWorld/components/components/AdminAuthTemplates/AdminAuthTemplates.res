@@ -1,5 +1,4 @@
 %%raw("import './AdminAuthTemplates.css'")
-
 @react.component
 let make = (~title: string, ~secondryTitle: string, ~children: React.element) => {
   <div className={"Container"}>

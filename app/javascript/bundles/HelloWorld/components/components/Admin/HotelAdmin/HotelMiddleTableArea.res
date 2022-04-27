@@ -14,6 +14,8 @@ let make = (~result: Hotel.hotels) => {
       <th> {"Added by admin"->React.string} </th>
       // <th> {"Created at"->React.string} </th>
     </tr>
-    {result.data->Belt.Array.map(el => <HotelTableCard el={el} />)->React.array}
+    {result.data
+    ->Belt.Array.map(el => <HotelTableCard key={el.id->Belt.Int.toString} el={el} />)
+    ->React.array}
   </table>
 }

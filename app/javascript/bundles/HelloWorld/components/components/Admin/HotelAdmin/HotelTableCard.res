@@ -3,7 +3,7 @@ open Hotel
 let make = (~el: Hotel.hotel) => {
   let (show, setShow) = React.useState(_ => true)
   let handleDelete = slug => {
-    let x =
+    let _ =
       Fetch.fetchWithInit(
         `/api/v1/hotels/${slug}`,
         Fetch.RequestInit.make(

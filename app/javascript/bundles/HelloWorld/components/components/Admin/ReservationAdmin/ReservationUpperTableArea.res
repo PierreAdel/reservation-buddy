@@ -1,7 +1,5 @@
 @react.component
 let make = (~search: string, ~handleChangeSearch, ~sort: string, ~handleChangeSort) => {
-  let url = RescriptReactRouter.useUrl()
-
   <div className={"UpperTableArea"}>
     //   <button className={"UpperTableButton"}> {"Sort by"->React.string} </button>
     <select value={sort} onChange={handleChangeSort} className={"UpperTableInput"}>

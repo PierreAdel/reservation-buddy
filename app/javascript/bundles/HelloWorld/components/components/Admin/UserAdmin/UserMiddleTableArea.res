@@ -10,6 +10,8 @@ let make = (~result: Customer.customers) => {
       <th> {"Reservations"->React.string} </th>
       // <th> {"Created at"->React.string} </th>
     </tr>
-    {result.data->Belt.Array.map(el => <UserTableCard el={el} />)->React.array}
+    {result.data
+    ->Belt.Array.map(el => <UserTableCard key={el.id->Belt.Int.toString} el={el} />)
+    ->React.array}
   </table>
 }
