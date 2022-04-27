@@ -11,6 +11,6 @@ let make = (~el: Reservation.reservation) => {
     <td> {el.customer_name->React.string} </td>
     <td> {el.hotel_name->React.string} </td>
     <td> {el.hotel_city->React.string} </td>
-    <td> {el.created_at->Js.Date.fromString->Js.Date.toDateString->React.string} </td>
+    // <td> {el.created_at->Js.Date.fromString->Js.Date.toDateString->React.string} </td>
   </tr>
 }

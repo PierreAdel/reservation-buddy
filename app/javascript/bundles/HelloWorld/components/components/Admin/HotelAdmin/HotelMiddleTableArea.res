@@ -12,7 +12,7 @@ let make = (~result: Hotel.hotels) => {
       <th> {"Description"->React.string} </th>
       <th> {"City"->React.string} </th>
       <th> {"Added by admin"->React.string} </th>
-      <th> {"Created at"->React.string} </th>
+      // <th> {"Created at"->React.string} </th>
     </tr>
     {result.data->Belt.Array.map(el => <HotelTableCard el={el} />)->React.array}
   </table>

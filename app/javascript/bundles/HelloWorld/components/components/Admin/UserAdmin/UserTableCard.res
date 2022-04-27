@@ -7,6 +7,6 @@ let make = (~el: Customer.customer) => {
     <td> {el.name->React.string} </td>
     <td> {el.email->React.string} </td>
     <td> {el.reservations->Belt.Array.length->Belt.Int.toString->React.string} </td>
-    <td> {el.created_at->Js.Date.fromString->Js.Date.toDateString->React.string} </td>
+    // <td> {el.created_at->Js.Date.fromString->Js.Date.toDateString->React.string} </td>
   </tr>
 }

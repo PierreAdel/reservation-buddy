@@ -15,6 +15,7 @@ let make = (~el: Hotel.hotel) => {
     setShow(_ => false)
     // RescriptReactRouter.replace("/admin?table=hotels")
   }
+
   {
     show
       ? <tr key={el.id->Belt.Int.toString}>
@@ -31,7 +32,7 @@ let make = (~el: Hotel.hotel) => {
           <td> {el.description->React.string} </td>
           <td> {el.city->React.string} </td>
           <td> {el.admin_name->React.string} </td>
-          <td> {el.created_at->Js.Date.fromString->Js.Date.toDateString->React.string} </td>
+          // <td> {el.created_at->Js.Date.fromString->Js.Date.toDateString->React.string} </td>
         </tr>
       : React.null
   }
