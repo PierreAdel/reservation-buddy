@@ -31,7 +31,9 @@
     "webpack-cli": "3.3.12"
   },
   "devDependencies": {
+    "@prettier/plugin-ruby": "^2.1.0",
     "lenses-ppx": "^6.1.10",
+    "prettier": "^2.6.2",
     "webpack-dev-server": "3"
   }
 }
