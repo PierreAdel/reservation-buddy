@@ -4,17 +4,20 @@ let make = () => {
 
   let client = ReactQuery.Provider.createClient()
   <ReactQuery.Provider client>
-
- { switch url.path {
-  | list{} => <Home />
-  | list{"login"} => <Login />
-  | list{"register"} => <Register />
-  | list{"admin_login"} => <AdminLogin />
-  | list{"test"} =>   <Test />  
-  | list{"test2"} =>   <Test2 />  
-  | list{"admin"} =>   <Admin />  
-  | _ => <h1>{"404"->React.string} </h1>
-  }}
+    {switch url.path {
+    | list{} => <Home />
+    | list{"login"} => <UserGuard> <AdminGuard> <Login /> </AdminGuard> </UserGuard>
+    | list{"register"} => <UserGuard> <AdminGuard> <Register /> </AdminGuard> </UserGuard>
+    | list{"admin_login"} => <UserGuard> <AdminGuard> <AdminLogin /> </AdminGuard> </UserGuard>
+    // | list{"test"} => <Test />
+    // | list{"test2"} => <Test2 />
+    | list{"admin"} => <AllowAdminGuard> <AdminPage /> </AllowAdminGuard>
+    | _ => <>
+        <h2 style={ReactDOM.Style.make(~margin="30px", ())}>
+          {"404: Page not found"->React.string}
+        </h2>
+      </>
+    }}
   </ReactQuery.Provider>
 
   // let total = Counter.add(2,3) -> Belt.Int.toString
