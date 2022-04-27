@@ -189,3 +189,7 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+
+Gemfile.lock
+.bsb.lock
+package-lock.json
