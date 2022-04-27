@@ -17,7 +17,6 @@ class ReservationRepresenter
       cover_image_url: reservation.hotel.cover_image_url,
       score: reservation.hotel.score,
       hotel_city: reservation.hotel.city,
-      created_at: reservation.created_at,
     }
   end
 
