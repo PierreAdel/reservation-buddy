@@ -5,7 +5,6 @@ module Customer = {
     id: int,
     name: string,
     email: string,
-    created_at: string,
     reservations: array<Reservation.reservation>,
   }
 

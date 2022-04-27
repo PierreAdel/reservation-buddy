@@ -10,7 +10,6 @@ module Hotel = {
     city: string,
     admin_id: int,
     admin_name: string,
-    created_at: string,
   }
 
   type hotels = {

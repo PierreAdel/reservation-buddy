@@ -13,7 +13,7 @@ module Reservation = {
     hotel_city: string,
     cover_image_url: string,
     score: float,
-    created_at: string,
+    // created_at: string,
   }
 
   type reservations = {
