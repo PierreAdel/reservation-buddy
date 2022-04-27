@@ -9,10 +9,9 @@ class Reservation < ApplicationRecord
             presence: true,
             numericality: {
               greater_than: 0,
-              less_than_or_equal_to: 100
+              less_than_or_equal_to: 100,
             }
 
-  # validates :total_price, presence: true, numericality: { greater_than: 0 }
   validates_date :date_from, on_or_after: :today # See Restriction Shorthand.
 
   def calculate_total_price
