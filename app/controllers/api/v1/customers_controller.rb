@@ -1,10 +1,7 @@
 module Api
   module V1
     class CustomersController < ApplicationController
-      # protect_from_forgery with: :null_session
       before_action :authenticate_admin, only: %i[index show destroy]
-
-      # before_action :authenticate_user, only: [:update]
 
       MAX_PAGINATION_LIMIT = 100
 
@@ -33,17 +30,6 @@ module Api
           render json: { errors: 'Not found' }, status: 404
         end
       end
-
-      # def update
-      #     customer = Customer.find_by(email: params[:email]++".com")
-      #     if !customer
-      #         render json: { errors: "Customer not found" }, status: 404
-      #     elsif customer.update(customer_params)
-      #         render json: customer
-      #     else
-      #         render json: { errors: customer.errors.full_messages }, status: 422
-      #     end
-      # end
 
       def destroy
         customer = Customer.find_by(email: params[:email] + +'.com')
@@ -88,9 +74,6 @@ module Api
           render json: { errors: 'User not Authorized' }, status: :unauthorized
         end
       end
-      # def options
-      #     @options ||= {include: %i[admins]}
-      # end
     end
   end
 end
