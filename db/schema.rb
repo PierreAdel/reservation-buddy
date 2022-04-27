@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_25_200112) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_26_100121) do
   create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_25_200112) do
     t.integer "customer_id", null: false
     t.integer "hotel_id", null: false
     t.integer "number_of_days"
+    t.float "total_price"
     t.index ["customer_id"], name: "index_reservations_on_customer_id"
     t.index ["hotel_id"], name: "index_reservations_on_hotel_id"
   end
