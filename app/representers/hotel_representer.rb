@@ -15,7 +15,6 @@ class HotelRepresenter
       # name_plus_id: complex_fn(hotel),
       admin_id: hotel.admin_id,
       admin_name: hotel.admin.name,
-      created_at: hotel.created_at,
     }
   end
 
