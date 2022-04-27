@@ -48,13 +48,14 @@ let make = () => {
   // | _ => errorTodo
   // }
   // Js.log(info.id)
-  let (table, setTable) = React.useState(_ => "")
-  let (sort, setSort) = React.useState(_ => "")
+  let (table, setTable) = React.useState(_ => "users")
+  let (sort, setSort) = React.useState(_ => "created_at")
   let (search, setSearch) = React.useState(_ => "")
   let (page, setPage) = React.useState(_ => 1)
   // let url = RescriptReactRouter.useUrl()
   let handleChangeSort = event => {
     let newValue = ReactEvent.Form.target(event)["value"]
+    Js.log(sort)
     setSort(newValue)
   }
   let handleChangeSearch = event => {
@@ -67,29 +68,57 @@ let make = () => {
       setPage(_ => newValue)
     }
   }
-  React.useEffect4(() => {
+  React.useEffect3(() => {
     RescriptReactRouter.push(
-      `${table != "" || sort != "" || search != "" || page != 1 ? "?" : ""}${table != ""
-          ? "&table=" ++ table
+      `${sort != "" || search != "" || page != 1 ? "?" : ""}${table != ""
+          ? "?table=" ++ table
           : ""}${sort != "" ? "&sort=" ++ sort : ""}${search != ""
           ? "&search=" ++ search
           : ""}${page != 1 ? "&page=" ++ page->Js.Int.toString : ""}`,
     )
     None
-  }, (table, sort, search, page))
+  }, (sort, search, page))
+
+  React.useEffect1(() => {
+    setSearch(_ => "")
+    setPage(_ => 1)
+    setSort(_ => "")
+    RescriptReactRouter.push(table != "" ? "?table=" ++ table : "")
+    None
+  }, [table])
 
   <div className={"grid-container"}>
     <LeftColumn table={table} setTable={setTable} />
     <div className="TableArea">
       <span className={"TableTitleText"}> {"Users Table"->React.string} </span>
-      <UpperTableArea
-        search={search}
-        handleChangeSearch={handleChangeSearch}
-        sort={sort}
-        handleChangeSort={handleChangeSort}
-      />
-      <MiddleTableArea />
-      <LowerTableArea page={page} handleChangePage={handleChangePage} maxPage={maxPage} />
+      {if table == "reservations" {
+        <ReservationCompleteTable
+          page={page}
+          search={search}
+          handleChangePage={handleChangePage}
+          handleChangeSearch={handleChangeSearch}
+          sort={sort}
+          handleChangeSort={handleChangeSort}
+        />
+      } else if table == "hotels" {
+        <HotelCompleteTable
+          page={page}
+          search={search}
+          handleChangePage={handleChangePage}
+          handleChangeSearch={handleChangeSearch}
+          sort={sort}
+          handleChangeSort={handleChangeSort}
+        />
+      } else {
+        <UserCompleteTable
+          page={page}
+          search={search}
+          handleChangePage={handleChangePage}
+          handleChangeSearch={handleChangeSearch}
+          sort={sort}
+          handleChangeSort={handleChangeSort}
+        />
+      }}
     </div>
   </div>
 }
