@@ -25,14 +25,6 @@ module Api
       def show
         hotel = Hotel.find_by(slug: params[:slug])
         render json: HotelRepresenter.new(hotel).as_json
-
-        # admin = Admin.find(hotel.admin_id)
-        # render json: admin
-
-        # hotel =  Hotel
-        # .select('hotels.*, admins.name as admin_name')
-        # .joins("INNER JOIN admins ON admins.id = hotels.admin_id")
-        # render json: hotel
       end
 
       def create
