@@ -1,9 +1,47 @@
 %%raw("import './Register.css'")
-
 @react.component
 let make = () => {
   let title = "Register"
   let secondry_title = "Aloha! Create an account to reserve a hotel at the lowest prices."
+
+  let (name, setName) = React.useState(_ => "")
+  let (email, setEmail) = React.useState(_ => "")
+  let (password, setPassword) = React.useState(_ => "")
+
+  let handleChangeName = event => {
+    let newValue = ReactEvent.Form.target(event)["value"]
+    setName(newValue)
+  }
+  let handleChangeEmail = event => {
+    let newValue = ReactEvent.Form.target(event)["value"]
+    setEmail(newValue)
+  }
+  let handleChangePassword = event => {
+    let newValue = ReactEvent.Form.target(event)["value"]
+    setPassword(newValue)
+  }
+
+  let handleSubmit = e => {
+    let payload = Js.Dict.empty()
+    Js.Dict.set(payload, "email", Js.Json.string(email))
+    Js.Dict.set(payload, "name", Js.Json.string(name))
+    Js.Dict.set(payload, "password", Js.Json.string(password))
+    let x =
+      Fetch.fetchWithInit(
+        `/api/v1/registrations`,
+        Fetch.RequestInit.make(
+          ~method_=Post,
+          ~body=Fetch.BodyInit.make(Js.Json.stringify(Js.Json.object_(payload))),
+          ~headers=Fetch.HeadersInit.make({"Content-Type": "application/json"}),
+          (),
+        ),
+      )->Js.Promise.then_(Fetch.Response.json, _)
+
+    setPassword(_ => "")
+    setName(_ => "")
+    setEmail(_ => "")
+    RescriptReactRouter.replace("/")
+  }
 
   <AuthTemplates title={title} secondryTitle={secondry_title}>
     <p
@@ -11,26 +49,49 @@ let make = () => {
       style={ReactDOM.Style.make(~marginTop="40px", ~fontSize="16px", ~color="grey", ())}>
       {"Full Name"->React.string}
     </p>
-    <input className={"Input"} type_={"text"} />
+    <input
+      name="name"
+      id="name"
+      value={name}
+      onChange={handleChangeName}
+      className={"Input"}
+      type_={"text"}
+    />
     <p
       className={"Text"}
       style={ReactDOM.Style.make(~marginTop="30px", ~fontSize="16px", ~color="grey", ())}>
       {"Email"->React.string}
     </p>
-    <input className={"Input"} type_={"text"} />
+    <input
+      name="email"
+      id="email"
+      value={email}
+      onChange={handleChangeEmail}
+      className={"Input"}
+      type_={"text"}
+    />
     <p
       className={"Text"}
       style={ReactDOM.Style.make(~marginTop="30px", ~fontSize="16px", ~color="grey", ())}>
       {"Password"->React.string}
     </p>
-    <input className={"Input"} type_={"password"} />
-    <p
-      className={"Text"}
-      style={ReactDOM.Style.make(~marginTop="30px", ~fontSize="16px", ~color="grey", ())}>
-      {"Confirm Password"->React.string}
-    </p>
-    <input className={"Input"} type_={"password"} />
-    <button className={"Button"} type_={"submit"}> {title->React.string} </button>
+    <input
+      name="password"
+      id="password"
+      value={password}
+      onChange={handleChangePassword}
+      className={"Input"}
+      type_={"password"}
+    />
+    // <p
+    //   className={"Text"}
+    //   style={ReactDOM.Style.make(~marginTop="30px", ~fontSize="16px", ~color="grey", ())}>
+    //   {"Confirm Password"->React.string}
+    // </p>
+    // <input className={"Input"} type_={"password"} />
+    <button onClick={handleSubmit} className={"Button"} type_={"submit"}>
+      {title->React.string}
+    </button>
     <div className={"Row"}>
       <p
         className={"Text"}
