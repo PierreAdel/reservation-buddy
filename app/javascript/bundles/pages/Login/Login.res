@@ -20,7 +20,7 @@ let make = () => {
     let payload = Js.Dict.empty()
     Js.Dict.set(payload, "email", Js.Json.string(email))
     Js.Dict.set(payload, "password", Js.Json.string(password))
-    let x =
+    let _ =
       Fetch.fetchWithInit(
         `/api/v1/sessions/user_login`,
         Fetch.RequestInit.make(
