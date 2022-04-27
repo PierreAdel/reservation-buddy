@@ -1,5 +1,4 @@
 %%raw("import './Login.css'")
-
 @react.component
 let make = () => {
   let title = "Login"
@@ -17,7 +16,7 @@ let make = () => {
     setPassword(newValue)
   }
 
-  let handleSubmit = e => {
+  let handleSubmit = _ => {
     let payload = Js.Dict.empty()
     Js.Dict.set(payload, "email", Js.Json.string(email))
     Js.Dict.set(payload, "password", Js.Json.string(password))
@@ -30,10 +29,11 @@ let make = () => {
           ~headers=Fetch.HeadersInit.make({"Content-Type": "application/json"}),
           (),
         ),
-      )->Js.Promise.then_(Fetch.Response.json, _)
+      )
+      ->Js.Promise.then_(_ => Js.Promise.resolve(Fetch.Response.json), _)
+      ->Js.Promise.then_(_ => Js.Promise.resolve(RescriptReactRouter.replace("/")), _)
     setPassword(_ => "")
     setEmail(_ => "")
-    RescriptReactRouter.replace("/")
   }
 
   <AuthTemplates title={title} secondryTitle={secondry_title}>
