@@ -3,12 +3,7 @@ class AdminRepresenter
     @admin = admin
   end
   def as_json
-    {
-      id: admin.id,
-      name: admin.name,
-      email: admin.email,
-      created_at: admin.created_at,
-    }
+    { id: admin.id, name: admin.name, email: admin.email }
   end
 
   private
