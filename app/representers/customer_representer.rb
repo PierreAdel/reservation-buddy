@@ -7,7 +7,6 @@ class CustomerRepresenter
       id: customer.id,
       name: customer.name,
       email: customer.email,
-      created_at: customer.created_at,
       reservations: ReservationsRepresenter.new(customer.reservations).as_json,
     }
   end
