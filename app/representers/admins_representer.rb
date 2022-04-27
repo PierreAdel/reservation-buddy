@@ -4,12 +4,7 @@ class AdminsRepresenter
   end
   def as_json
     admins.map do |admin|
-      {
-        id: admin.id,
-        name: admin.name,
-        email: admin.email,
-        created_at: admin.created_at,
-      }
+      { id: admin.id, name: admin.name, email: admin.email }
     end
   end
 
