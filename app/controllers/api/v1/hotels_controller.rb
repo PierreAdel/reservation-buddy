@@ -1,7 +1,6 @@
 module Api
   module V1
     class HotelsController < ApplicationController
-      # protect_from_forgery with: :null_session
       before_action :authenticate_admin, only: %i[create update destroy]
       MAX_PAGINATION_LIMIT = 100
       def index
@@ -42,7 +41,6 @@ module Api
         if hotel.nil?
           render json: { errors: 'Hotel not found' }, status: 404
         elsif hotel.update(hotel_params)
-          # render json: HotelSerializer.new(hotel, options).serialized_json
           render json: hotel
         else
           render json: { errors: hotel.errors.full_messages }, status: 422
@@ -95,10 +93,6 @@ module Api
           render json: { errors: 'Not Authorized' }, status: :unauthorized
         end
       end
-
-      # def options
-      #     @options ||= {include: %i[admins]}
-      # end
     end
   end
 end
