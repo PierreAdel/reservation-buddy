@@ -1,5 +1,5 @@
 module RequestHelper
-    def response_body
+  def response_body
     JSON.parse(response.body)
-    end
+  end
 end
