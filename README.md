@@ -19,7 +19,7 @@ yarn run re:start
 rails s
 ```
 
-## To run test suite
+## To run the test suite
 
 ```bash
 bundle exec rspec
@@ -35,6 +35,10 @@ bundle exec rspec
 - Customer:
   - **Email:** johndoe@gmail.com
   - **Password:** password1
+
+## Postman
+
+[Documentation link](https://documenter.getpostman.com/view/14307895/UyrEgEsA).
 
 ## Entity Relationship Diagram (ERD)
 
