@@ -3,7 +3,6 @@ module Api
     class ReservationsController < ApplicationController
       before_action :authenticate_admin, only: [:get_all_reservations]
       before_action :authenticate_user, only: %i[get_all_my_reservations create]
-      MAX_PAGINATION_LIMIT = 100
 
       def get_all_reservations
         reservations =
@@ -25,7 +24,8 @@ module Api
       def create
         hotel = Hotel.find_by(slug: params[:slug])
         if hotel.nil?
-          render json: { errors: 'Hotel not found' }, status: 404 and return
+          render json: { errors: 'Hotel not found' }, status: :not_found and
+            return
         end
 
         reservation =
@@ -40,45 +40,17 @@ module Api
           render json: ReservationRepresenter.new(reservation).as_json,
                  status: :created
         else
-          render json: { errors: reservation.errors.full_messages }, status: 422
+          render json: {
+                   errors: reservation.errors.full_messages,
+                 },
+                 status: :unprocessable_entity
         end
       end
 
       private
 
-      def limit
-        [
-          params.fetch(:limit, MAX_PAGINATION_LIMIT).to_i,
-          MAX_PAGINATION_LIMIT,
-        ].min
-      end
-
-      def offset
-        params.fetch(:page, 1).to_i * limit.to_i - limit.to_i
-      end
-
-      def sort
-        params.fetch(:sort, 'created_at')
-      end
-
       def reservation_params
         params.require(:reservation).permit(:slug)
-      end
-
-      def authenticate_admin
-        unless helpers.admin_logged_in?
-          render json: { errors: 'Admin not Authorized' }, status: :unauthorized
-        end
-      end
-
-      def authenticate_user
-        unless helpers.user_logged_in?
-          render json: {
-                   errors: 'User not Authorized',
-                   data: [],
-                 },
-                 status: :unauthorized
-        end
       end
     end
   end
