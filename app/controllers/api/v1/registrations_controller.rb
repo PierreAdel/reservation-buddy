@@ -17,7 +17,10 @@ module Api
                  },
                  status: :created
         else
-          render json: { errors: @user.errors.full_messages }, status: 500
+          render json: {
+                   errors: @user.errors.full_messages,
+                 },
+                 status: :internal_server_error
         end
       end
     end
