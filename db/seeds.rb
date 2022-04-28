@@ -10,9 +10,9 @@ customers =
 admins =
   Admin.create(
     [
-      { name: 'Admin', email: 'Admin@Admin.com', password: 'password1' },
-      { name: 'Admin2', email: 'Admin2@gmail.com', password: 'password1' },
-      { name: 'Admin3', email: 'Admin3@gmail.com', password: 'password1' },
+      { name: 'Admin', email: 'admin@admin.com', password: 'password1' },
+      { name: 'Admin2', email: 'admin2@gmail.com', password: 'password1' },
+      { name: 'Admin3', email: 'admin3@gmail.com', password: 'password1' },
     ],
   )
 
@@ -20,13 +20,13 @@ reservations =
   Reservation.create(
     [
       {
-        date_from: DateTime.strptime('09/14/2022', '%m/%d/%Y'),
+        date_from: DateTime.strptime('04/03/2052', '%m/%d/%Y'),
         number_of_days: 2,
         hotel: Hotel.first,
         customer: Customer.first,
       },
       {
-        date_from: DateTime.strptime('09/14/2022', '%m/%d/%Y'),
+        date_from: DateTime.strptime('09/01/2042', '%m/%d/%Y'),
         number_of_days: 5,
         hotel: Hotel.last,
         customer: Customer.last,
