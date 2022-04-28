@@ -74,6 +74,9 @@ Rails.application.configure do
 
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
+  config.build_production_command =
+    'RAILS_ENV=production NODE_ENV=production bin/webpacker'
+  Rake::Task['webpacker:clean'].clear
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
