@@ -11,7 +11,7 @@ RSpec.describe 'Sessions API', type: :request do
                email: 'wrong@wrong.com',
                password: 'wrong1',
              }
-        expect(response).to have_http_status(401)
+        expect(response).to have_http_status(:unauthorized)
       end
 
       it 'success post /sessions/user_login' do
@@ -93,7 +93,7 @@ RSpec.describe 'Sessions API', type: :request do
                email: 'wrong@wrong.com',
                password: 'wrong1',
              }
-        expect(response).to have_http_status(401)
+        expect(response).to have_http_status(:unauthorized)
       end
 
       it 'success post /sessions/admin_login' do
