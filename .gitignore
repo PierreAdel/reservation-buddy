@@ -112,7 +112,7 @@ yarn-debug.log*
 !/storage/.keep
 /public/uploads
 
-yarn.lock
+# yarn.lock
 package-lock-json
 config.ru
 .merlin
@@ -190,6 +190,6 @@ yarn-debug.log*
 !/storage/.keep
 /public/uploads
 
-Gemfile.lock
+# Gemfile.lock
 .bsb.lock
 package-lock.json
