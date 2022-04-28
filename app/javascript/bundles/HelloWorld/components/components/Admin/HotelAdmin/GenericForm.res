@@ -92,7 +92,7 @@ let make = (~clicked) => {
       <p className={"GenericFormTitle"}> {"Add hotel form"->React.string} </p>
       {arr
       ->Belt.Array.map(el =>
-        <div key={el.label}>
+        <React.Fragment key={el.label}>
           <p className={"Label"}> {(el.label ++ " *")->React.string} </p>
           <input
             onChange={el.handleChange}
@@ -101,7 +101,7 @@ let make = (~clicked) => {
             className={"UpperTableInput"}
             placeholder={el.label}
           />
-        </div>
+        </React.Fragment>
       )
       ->React.array}
       <button
