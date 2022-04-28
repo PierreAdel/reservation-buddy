@@ -1,6 +1,12 @@
+@send external focus: Dom.element => unit = "focus"
 @react.component
 let make = (~search: string, ~handleChangeSearch, ~sort: string, ~handleChangeSort) => {
   let (show, setShow) = React.useState(_ => false)
+  let inputEl = React.useRef(Js.Nullable.null)
+  React.useEffect(() => {
+    inputEl.current->Js.Nullable.toOption->Belt.Option.forEach(input => input->focus)
+    None
+  })
 
   <div className={"UpperTableArea"}>
     <button onClick={_ => setShow(_ => true)} className={"UpperTableButton"}>
@@ -14,6 +20,7 @@ let make = (~search: string, ~handleChangeSearch, ~sort: string, ~handleChangeSo
       <option value="price_per_night"> {"Sort by Price per night"->React.string} </option>
     </select>
     <input
+      ref={ReactDOM.Ref.domRef(inputEl)}
       value={search}
       onChange={handleChangeSearch}
       className={"UpperTableInput"}
