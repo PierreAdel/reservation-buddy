@@ -7,7 +7,9 @@ Reservation Buddy is an hotel reservation system demo made with [shakacode/rescr
 ```bash
 bundle
 yarn
-rails db:setup
+rails db:create
+rails db:migrate
+rails db:seed
 ```
 
 ## Run the app
