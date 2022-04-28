@@ -3,10 +3,7 @@ module Api
     class CustomersController < ApplicationController
       before_action :authenticate_admin, only: %i[index show destroy]
 
-      MAX_PAGINATION_LIMIT = 100
-
       def index
-        # binding.irb
         customers =
           Customer
             .all
@@ -27,52 +24,28 @@ module Api
         if customer
           render json: CustomerRepresenter.new(customer).as_json
         else
-          render json: { errors: 'Not found' }, status: 404
+          render json: { errors: 'Customer not found' }, status: :not_found
         end
       end
 
       def destroy
         customer = Customer.find_by(email: params[:email] + +'.com')
         if customer.nil?
-          render json: { errors: 'Customer not found' }, status: 404
+          render json: { errors: 'Customer not found' }, status: :not_found
         elsif customer.destroy
           head :no_content
         else
-          render json: { errors: customer.errors.full_messages }, status: 422
+          render json: {
+                   errors: customer.errors.full_messages,
+                 },
+                 status: :unprocessable_entity
         end
       end
 
       private
 
-      def limit
-        [
-          params.fetch(:limit, MAX_PAGINATION_LIMIT).to_i,
-          MAX_PAGINATION_LIMIT,
-        ].min
-      end
-
-      def offset
-        params.fetch(:page, 1).to_i * limit.to_i - limit.to_i
-      end
-
-      def sort
-        params.fetch(:sort, 'created_at')
-      end
-
       def customer_params
         params.require(:customer).permit(:name, :email, :password)
-      end
-
-      def authenticate_admin
-        unless helpers.admin_logged_in?
-          render json: { errors: 'Admin not Authorized' }, status: :unauthorized
-        end
-      end
-
-      def authenticate_user
-        unless helpers.user_logged_in?
-          render json: { errors: 'User not Authorized' }, status: :unauthorized
-        end
       end
     end
   end
