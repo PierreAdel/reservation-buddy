@@ -31,7 +31,7 @@ bundle exec rspec
 
 - Admin:
 
-  - **Email:** Admin@Admin.com
+  - **Email:** admin@admin.com
   - **Password:** password1
 
 - Customer:
