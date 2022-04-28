@@ -2,7 +2,6 @@ module Api
   module V1
     class HotelsController < ApplicationController
       before_action :authenticate_admin, only: %i[create update destroy]
-      MAX_PAGINATION_LIMIT = 100
       def index
         hotels =
           Hotel
@@ -32,48 +31,42 @@ module Api
         if hotel.save
           render json: HotelRepresenter.new(hotel).as_json, status: :created
         else
-          render json: { errors: hotel.errors.full_messages }, status: 422
+          render json: {
+                   errors: hotel.errors.full_messages,
+                 },
+                 status: :unprocessable_entity
         end
       end
 
       def update
         hotel = Hotel.find_by(slug: params[:slug])
         if hotel.nil?
-          render json: { errors: 'Hotel not found' }, status: 404
+          render json: { errors: 'Hotel not found' }, status: :not_found
         elsif hotel.update(hotel_params)
           render json: hotel
         else
-          render json: { errors: hotel.errors.full_messages }, status: 422
+          render json: {
+                   errors: hotel.errors.full_messages,
+                 },
+                 status: :unprocessable_entity
         end
       end
 
       def destroy
         hotel = Hotel.find_by(slug: params[:slug])
         if hotel.nil?
-          render json: { errors: 'Hotel not found' }, status: 404
+          render json: { errors: 'Hotel not found' }, status: :not_found
         elsif hotel.destroy
           head :no_content
         else
-          render json: { errors: hotel.errors.full_messages }, status: 422
+          render json: {
+                   errors: hotel.errors.full_messages,
+                 },
+                 status: :unprocessable_entity
         end
       end
 
       private
-
-      def limit
-        [
-          params.fetch(:limit, MAX_PAGINATION_LIMIT).to_i,
-          MAX_PAGINATION_LIMIT,
-        ].min
-      end
-
-      def offset
-        params.fetch(:page, 1).to_i * limit.to_i - limit.to_i
-      end
-
-      def sort
-        params.fetch(:sort, 'created_at')
-      end
 
       def hotel_params
         params
@@ -86,12 +79,6 @@ module Api
             :score,
             :price_per_night,
           )
-      end
-
-      def authenticate_admin
-        unless helpers.admin_logged_in?
-          render json: { errors: 'Not Authorized' }, status: :unauthorized
-        end
       end
     end
   end
