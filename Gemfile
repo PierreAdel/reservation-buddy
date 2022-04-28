@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.1'
 
-gem 'react_on_rails', '13.0.2'  
+gem "react_on_rails", "= 13.0.2"
 gem "shakapacker", "= 6.2"
 
 gem 'validates_timeliness'
