@@ -14,7 +14,7 @@ module Api
                  },
                  status: :created
         else
-          render json: {}, status: 401
+          render json: {}, status: :unauthorized
         end
       end
 
@@ -28,7 +28,7 @@ module Api
                  },
                  status: :created
         else
-          render json: {}, status: 401
+          render json: {}, status: :unauthorized
         end
       end
 
