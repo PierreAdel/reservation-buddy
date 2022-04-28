@@ -1,5 +1,5 @@
 {
-  "name": "your-project-name",
+  "name": "reservation-buddy",
   "sources": [
     {
       "dir": "app/javascript",
@@ -18,12 +18,10 @@
     "@rescript/react",
     "re-formality",
     "bs-fetch",
-    "bs-axios",
     "@glennsl/bs-json",
     "@rescript/react",
     "@rescriptbr/react-query",
-    "decco",
     "@ryyppy/rescript-promise"
   ],
-  "ppx-flags": ["re-formality/ppx", "decco/ppx"]
+  "ppx-flags": ["re-formality/ppx"]
 }
