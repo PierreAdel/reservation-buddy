@@ -1,0 +1,26 @@
+{
+  "application.js": "/packs-test/js/application-ea4d1d7c46dd5112c609.js",
+  "application.js.map": "/packs-test/js/application-ea4d1d7c46dd5112c609.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs-test/js/application-ea4d1d7c46dd5112c609.js"
+      ],
+      "js.map": [
+        "/packs-test/js/application-ea4d1d7c46dd5112c609.js.map"
+      ]
+    },
+    "hello-world-bundle": {
+      "js": [
+        "/packs-test/js/hello-world-bundle-de3c2f3e0edcb18fb057.js"
+      ],
+      "js.map": [
+        "/packs-test/js/hello-world-bundle-de3c2f3e0edcb18fb057.js.map"
+      ]
+    }
+  },
+  "hello-world-bundle.js": "/packs-test/js/hello-world-bundle-de3c2f3e0edcb18fb057.js",
+  "hello-world-bundle.js.map": "/packs-test/js/hello-world-bundle-de3c2f3e0edcb18fb057.js.map",
+  "media/images/bg.jpg": "/packs-test/media/images/bg-89722c1b.jpg",
+  "media/images/bg2.jpg": "/packs-test/media/images/bg2-83031f48.jpg"
+}

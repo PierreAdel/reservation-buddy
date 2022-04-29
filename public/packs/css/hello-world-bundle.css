@@ -1,0 +1,1119 @@
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./app/javascript/hello-world-bundle.css ***!
+  \*******************************************************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./app/javascript/bundles/pages/Home/Home.css ***!
+  \************************************************************************************************************************************************************************************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: grey;
+}
+.HomeContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.HotelCard {
+  background-color: #bdfbff;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.HotelImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-image: url(${LoginImage}); */
+  /* background-image: url("../../assets/bg2.jpg"); */
+  background-color: #cccccc;
+
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: contain; */
+  height: 200px;
+  width: 18%;
+  border-radius: 10px;
+}
+.InputArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.SearchArea {
+  width: 1200px;
+  align-self: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+}
+.RightArea {
+  width: auto;
+}
+.Logo {
+  aspect-ratio: 1.1/1;
+  width: 45px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.NavigationBar {
+  background-color: #fff;
+  width: 1200px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0;
+  /* @media (max-width: 480px) {
+      height: 60px;
+    } */
+}
+.InfoCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.InfoCard {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.InfoImage {
+  /* background-image: url(${(props) => props.src}); */
+  /* background-image: url("../../assets/bg2.jpg"); */
+  /* background-color:   #cccccc; */
+
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+}
+.InfoText {
+  margin: 0 15px;
+}
+.ReserveCardTextArea {
+  width: 55%;
+}
+.InfoTextHeader {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e07751;
+}
+.ReserveCardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 7px 0;
+}
+.ReserveCardParagraph {
+  font-size: 14px;
+  line-height: 150%;
+}
+.ReserveCardScore {
+  font-size: 14px;
+  color: #e07751;
+  font-weight: 600;
+}
+.ReserveCardCity {
+  font-size: 14px;
+  color: grey;
+  font-weight: 500;
+  margin-top: 5px;
+}
+.InfoTextParagraph {
+  font-size: 14px;
+}
+.ReserveButton {
+  width: 20%;
+  border-radius: 20px;
+  background-color: #e07751;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.PastReservedButton {
+  width: 20%;
+  border-radius: 20px;
+  background-color: grey;
+  opacity: 0.5;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: no-drop;
+}
+.LineArea {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 1200px;
+  padding: 20px 0;
+  margin-top: 20px;
+  align-self: center;
+}
+.CardImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-image: url(${(props)=>props.src}); */
+  /* background-image: url("../../assets/bg2.jpg"); */
+  background-color: lightgrey;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 125px;
+  border-radius: 5px;
+  width: 100%;
+}
+.HotelCardImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-image: url(${(props)=>props.src}); */
+  /* background-image: url("../../assets/bg2.jpg"); */
+  /* background-color: lightgrey; */
+
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  height: 275px;
+  width: 100%;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.CardText {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.CardTextSmall {
+  margin-top: 5px;
+  font-size: 14px;
+  color: grey;
+}
+.Cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.Card {
+  width: 15.5%;
+  cursor: pointer;
+}
+.PropertyCard {
+  width: 18.5%;
+  cursor: pointer;
+}
+.MiddleArea {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Popular {
+  width: 1200px;
+  align-self: center;
+}
+.Hero {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* background-image: url(${LoginImage}); */
+  background-image: url(/packs/static/bg2-83031f48d56d16edc58c.jpg);
+  background-color: #cccccc;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.SearchInput {
+  padding: 12px 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid grey;
+  background-color: #f6f4f3;
+  /* width: 21%; */
+}
+.SearchInput:focus {
+  border: 1px solid #e07751;
+}
+.SearchButton {
+  box-sizing: border-box;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  color: white;
+  background: #e07751;
+  width: 12%;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.SearchTitleText {
+  color: #e07751;
+  padding: 0;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.ColumnArea {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+}
+.SearchInputLabel {
+  font-size: 14px;
+  color: grey;
+  font-weight: 500;
+}
+.PopularText {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+.KhatTitleText {
+  font-size: 22px;
+}
+@media (min-width: 1024px) and (max-width: 1350px) {
+  .NavigationBar {
+    width: 95%;
+  }
+  .SearchArea {
+    width: 95%;
+  }
+  .LineArea {
+    width: 95%;
+  }
+  .Popular {
+    width: 95%;
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  .NavigationBar {
+    width: 95%;
+  }
+  .SearchArea {
+    width: 95%;
+  }
+  .LineArea {
+    width: 95%;
+  }
+  .Popular {
+    width: 95%;
+  }
+  /* .SearchInput {
+    width: 26%;
+  } */
+  .ColumnArea {
+    width: 30%;
+  }
+  .SearchButton {
+    width: 15%;
+  }
+
+  .Cards {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
+  .Card {
+    width: 32%;
+    margin-bottom: 20px;
+  }
+  .Card:nth-child(5),
+  .Card:last-child,
+  .Card:nth-child(4) {
+    margin-bottom: 0;
+  }
+  .CardImage {
+    height: 150px;
+  }
+
+  .PropertyCard {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .ReserveCardTextArea {
+    width: 72%;
+  }
+  .HotelImage {
+    width: 25%;
+    height: 175px;
+  }
+  .ReserveButton {
+    width: 35%;
+    padding: 15px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .PastReservedButton {
+    width: 50%;
+    padding: 15px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .HotelCard {
+    background-color: #bdfbff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .NavigationBar {
+    width: 95%;
+  }
+  .SearchArea {
+    width: 95%;
+  }
+  .LineArea {
+    width: 95%;
+  }
+  .Popular {
+    width: 95%;
+  }
+  /* .SearchInput {
+    width: 26%;
+  } */
+  .ColumnArea {
+    width: 32%;
+  }
+  .SearchButton {
+    width: 15%;
+  }
+
+  .Cards {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
+  .Card {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  .Card:last-child {
+    margin-bottom: 0;
+  }
+  .Card:nth-child(5) {
+    margin-bottom: 0;
+  }
+
+  .CardImage {
+    height: 150px;
+  }
+
+  .InfoCards {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .InfoCard {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 20px;
+  }
+  .InfoCard:last-child {
+    margin-bottom: 0;
+  }
+  .PropertyCard {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .ReserveCardTextArea {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .HotelImage {
+    width: 70%;
+    height: 175px;
+    margin: auto;
+  }
+  .ReserveButton {
+    width: 70%;
+    padding: 15px;
+    margin: auto;
+  }
+  .PastReservedButton {
+    width: 70%;
+    padding: 15px;
+    margin: auto;
+  }
+  .HotelCard {
+    background-color: #bdfbff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .NavigationBar {
+    width: 95%;
+  }
+  .SearchArea {
+    width: 95%;
+  }
+  .LineArea {
+    width: 95%;
+  }
+  .Popular {
+    width: 95%;
+  }
+  .InputArea {
+    flex-direction: column;
+  }
+  /* .SearchInput {
+    width: 100%;
+    margin-bottom: 20px;
+  } */
+  .ColumnArea {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .SearchButton {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .Cards {
+    flex-direction: column;
+  }
+  .Card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .Card:last-child {
+    margin-bottom: 0px;
+  }
+  .CardImage {
+    height: 200px;
+  }
+  .InfoCards {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .InfoCard {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 20px;
+  }
+  .InfoCard:last-child {
+    margin-bottom: 0;
+  }
+  .PropertyCard {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./app/javascript/bundles/HelloWorld/components/components/AuthTemplates/AuthTemplates.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+.Text {
+  padding: 0;
+  margin: 0;
+}
+
+.Container {
+  box-sizing: border-box;
+}
+
+.Center {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -45%);
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background-color: #fff;
+  width: 1000px;
+  height: auto;
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-family: arial, sans-serif;
+  border-radius: 10px;
+  /* @media only screen and (max-width: 1368px) {
+    width: 80%;
+  }
+  @media only screen and (max-width: 480px) {
+    width: 90%;
+  } */
+}
+
+.LeftContainer {
+  width: 50%;
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  /* @media (min-width: 1024px) and (max-width: 1350px) {
+    width: 50%;
+  }
+  @media (min-width: 767px) and (max-width: 1024px) {
+    width: 50%;
+  }
+  @media (min-width: 480px) and (max-width: 767px) {
+    width: 100%;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+  } */
+}
+
+.RightContainer {
+  width: 50%;
+  box-sizing: border-box;
+  background-image: url(/packs/static/bg-89722c1bdfa60ec00429.jpg);
+  background-color: #cccccc;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media only screen and (max-width: 1368px) {
+  .Center {
+    width: 850px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .Center {
+    width: 85%;
+  }
+  .LeftContainer {
+    width: 100%;
+    padding: 30px;
+  }
+  .RightContainer {
+    width: 0%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .Center {
+    width: 90%;
+  }
+  .LeftContainer {
+    padding: 20px;
+  }
+}
+
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./app/javascript/bundles/pages/Login/Login.css ***!
+  \**************************************************************************************************************************************************************************************************/
+.Input {
+  width: 100%;
+  padding: 7px 5px;
+  border-radius: 5px;
+  margin-top: 3px;
+  font-size: 18px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid grey;
+  /* :focus {
+      border: 1px solid #E07751;
+    } */
+}
+
+.Button {
+  box-sizing: border-box;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: 10px 0;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: #e07751;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.Row {
+  display: flex;
+  box-sizing: border-box;
+
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.Text {
+  padding: 0;
+  margin: 0;
+}
+
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./app/javascript/bundles/pages/Register/Register.css ***!
+  \********************************************************************************************************************************************************************************************************/
+.Input {
+  width: 100%;
+  padding: 7px 5px;
+  border-radius: 5px;
+  margin-top: 3px;
+  font-size: 18px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid grey;
+  /* :focus {
+        border: 1px solid #E07751;
+      } */
+}
+
+.Button {
+  box-sizing: border-box;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: 10px 0;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: #e07751;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.Row {
+  display: flex;
+  box-sizing: border-box;
+
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.Text {
+  padding: 0;
+  margin: 0;
+}
+
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./app/javascript/bundles/pages/Admin/Admin.css ***!
+  \**************************************************************************************************************************************************************************************************/
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 5%;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  grid-template-columns: 10% 80%;
+  background-color: #18191b;
+}
+
+.LeftCol {
+  height: 100vh;
+  padding-top: 50px;
+  text-align: center;
+  background-color: #242527;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.LeftText {
+  margin-bottom: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+.LeftColItem {
+  padding: 15px 0;
+  text-align: center;
+  text-align: center;
+  border-top: 1px ridge grey;
+  border-bottom: 1px ridge grey;
+
+  color: white;
+  background-color: #242527;
+}
+
+.LeftColItem:hover {
+  background-color: #e07751;
+  cursor: pointer;
+}
+
+.BG {
+}
+
+.UpperTableArea {
+  margin-top: 30px;
+
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.LowerTableArea {
+  margin-bottom: 30px;
+
+  color: white;
+  background-color: #e07751;
+
+  width: 100%;
+  padding: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.LowerTableText {
+  color: white;
+  font-size: 14px;
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+.UpperTableButton {
+  padding: 10px 15px;
+  background-color: #e07751;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.LowerTableButton {
+  background-color: #e07751;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 20px;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.UpperTableInput {
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid grey;
+  background-color: #f6f4f3;
+  margin-right: 20px;
+}
+
+.UpperTableInput:focus {
+  border: 1px solid #e07751;
+}
+
+table {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}
+
+.TableTitleText {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+  border-bottom: 3px solid white;
+}
+
+.TableArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border: none;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #e07751;
+
+  color: white;
+}
+
+.GenericForm {
+  position: fixed;
+  top: 45%;
+  z-index: 101;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -45%);
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background-color: #fff;
+  width: 600px;
+  height: auto;
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-family: arial, sans-serif;
+  border-radius: 10px;
+
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.Backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.Label {
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  margin-top: 15px;
+}
+
+.GenericFormTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.GenericFormSubmit {
+  padding: 10px 15px;
+  background-color: #e07751;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 35%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.Active {
+  background-color: #e07751;
+}
+
+.Disabled {
+  cursor: no-drop;
+  color: #aaaaaa;
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./app/javascript/bundles/HelloWorld/components/components/AdminAuthTemplates/AdminAuthTemplates.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.text {
+  padding: 0;
+  margin: 0;
+}
+
+.Container {
+  box-sizing: border-box;
+}
+
+.CenterDiv {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -45%);
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background-color: #fff;
+  width: 600px;
+  height: auto;
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-family: arial, sans-serif;
+  border-radius: 10px;
+
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1368px) {
+  .CenterDiv {
+    width: 650px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .CenterDiv {
+    width: 85%;
+    padding: 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .CenterDiv {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./app/javascript/bundles/pages/AdminLogin/AdminLogin.css ***!
+  \************************************************************************************************************************************************************************************************************/
+.Input {
+  width: 100%;
+  padding: 7px 5px;
+  border-radius: 5px;
+  margin-top: 3px;
+  font-size: 18px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid grey;
+  /* :focus {
+      border: 1px solid #E07751;
+    } */
+}
+
+.Button {
+  box-sizing: border-box;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: 10px 0;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: #e07751;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.Row {
+  display: flex;
+  box-sizing: border-box;
+
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.Text {
+  padding: 0;
+  margin: 0;
+}
+
+
+/*# sourceMappingURL=hello-world-bundle.css.map*/
