@@ -4,14 +4,13 @@ module Api
       # before_action :authenticate_admin, only: %i[create update destroy]
       def index
         hotels =
-          Hotel
-            .all
-            .limit(limit)
-            .offset(offset)
-            .order(sort, :desc)
+          Hotel.all
+            # .limit(limit)
+            # .offset(offset)
+            # .order(sort, :desc)
             .where(
-              "city LIKE '%#{params.fetch(:search, '')}%' OR hotel_name LIKE '%#{params.fetch(:search, '')}%'",
-            )
+            "city LIKE '%#{params.fetch(:search, '')}%' OR hotel_name LIKE '%#{params.fetch(:search, '')}%'",
+          )
 
         render json: { data: HotelsRepresenter.new(hotels).as_json }
       end

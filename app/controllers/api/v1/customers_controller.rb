@@ -8,7 +8,7 @@ module Api
           Customer
             .all
             # .limit(limit)
-            .offset(offset)
+            # .offset(offset)
             .order(sort, :desc)
             .where("name LIKE '%#{params.fetch(:search, '')}%'")
 
