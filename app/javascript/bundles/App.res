@@ -9,8 +9,6 @@ let make = () => {
     | list{"login"} => <UserGuard> <Login /> </UserGuard>
     | list{"register"} => <Register />
     | list{"admin_login"} => <AdminLogin />
-    | list{"test"} => <Test />
-    | list{"test2"} => <Test2 />
 
     | list{"admin"} => <AdminPage />
     | _ => <div> {"as"->React.string} </div>
