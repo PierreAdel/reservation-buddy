@@ -13,8 +13,12 @@
     "@rescriptbr/reform": "^12.0.0-0",
     "@ryyppy/rescript-promise": "^2.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-runtime": "7.0.0-beta.3",
     "bs-fetch": "^0.6.2",
     "compression-webpack-plugin": "9.2.0",
+    "css-loader": "5.2.6",
+    "css-minimizer-webpack-plugin": "^3.3.1",
+    "mini-css-extract-plugin": "^2.4.5",
     "re-formality": "^4.0.0-beta.17",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -24,6 +28,7 @@
     "rescript": "^9.1.4",
     "rescript-react-on-rails": "^1.0.0",
     "shakapacker": "6.0.0",
+    "style-loader": "2.0.0",
     "typescript": "4.7.0-dev.20220429",
     "webpack": "4.46.0",
     "webpack-assets-manifest": "5.1.0",
@@ -32,9 +37,12 @@
   },
   "devDependencies": {
     "@prettier/plugin-ruby": "^2.1.0",
+    "@storybook/preset-scss": "^1.0.3",
     "check-peer-dependencies": "^4.1.0",
     "lenses-ppx": "^6.1.10",
     "prettier": "^2.6.2",
+    "sass": "^1.51.0",
+    "sass-loader": "10.1.1",
     "webpack-dev-server": "4.3"
   }
 }
