@@ -13,7 +13,7 @@ module Api
             .where("name LIKE '%#{params.fetch(:search, '')}%'")
 
         render json: {
-                 #  pages: (Customer.all.length.to_f / limit).ceil(0),
+                 pages: (Customer.all.length.to_f / limit).ceil(0),
                  page: params.fetch(:page, 1).to_i,
                  data: CustomersRepresenter.new(customers).as_json,
                }
