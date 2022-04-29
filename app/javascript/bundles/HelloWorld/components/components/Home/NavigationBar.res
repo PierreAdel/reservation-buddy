@@ -37,7 +37,6 @@ let make = (~resetSearch) => {
   }
 
   <div className={"NavigationBar"}>
-    <img src={"../../../../../assets/new-logo.png"} onClick={resetSearch} className={"Logo"} />
-    content
+    <img src={"/new-logo.png"} onClick={resetSearch} className={"Logo"} /> content
   </div>
 }

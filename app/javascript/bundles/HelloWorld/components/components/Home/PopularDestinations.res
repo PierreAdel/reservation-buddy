@@ -8,27 +8,27 @@ let make = (~setCity) => {
   let arr = [
     {
       city: "Cairo",
-      imgSrc: "../../../../../../assets/cairo.jpg",
+      imgSrc: "/cairo.jpg",
     },
     {
       city: "Giza",
-      imgSrc: "../../../../../../assets/giza.jpg",
+      imgSrc: "/giza.jpg",
     },
     {
       city: "Alexandria",
-      imgSrc: "../../../../../../assets/alexandria.jpg",
+      imgSrc: "/alexandria.jpg",
     },
     {
       city: "Aswan",
-      imgSrc: "../../../../../../assets/aswan.jpg",
+      imgSrc: "/aswan.jpg",
     },
     {
       city: "Luxor",
-      imgSrc: "../../../../../../assets/luxor.jpg",
+      imgSrc: "/luxor.jpg",
     },
     {
       city: "Sharm El-Sheikh",
-      imgSrc: "../../../../../../assets/sharm.jpg",
+      imgSrc: "/sharm.jpg",
     },
   ]
   <div className={"Popular"}>
