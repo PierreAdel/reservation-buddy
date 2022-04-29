@@ -1,13 +1,19 @@
 module Api
   module V1
     class CustomersController < ApplicationController
-      # before_action :authenticate_admin, only: %i[index show destroy]
+      before_action :authenticate_admin, only: %i[index show destroy]
 
       def index
-        customers = Customer.all
+        customers =
+          Customer
+            .all
+            .limit(limit)
+            .offset(offset)
+            .order(sort, :desc)
+            .where("name LIKE '%#{params.fetch(:search, '')}%'")
 
         render json: {
-                 pages: (Customer.all.length.to_f / limit).ceil(0),
+                 #  pages: (Customer.all.length.to_f / limit).ceil(0),
                  page: params.fetch(:page, 1).to_i,
                  data: CustomersRepresenter.new(customers).as_json,
                }
