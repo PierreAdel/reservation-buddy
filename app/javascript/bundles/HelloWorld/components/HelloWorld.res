@@ -9,8 +9,6 @@ let make = () => {
     | list{"login"} => <UserGuard> <AdminGuard> <Login /> </AdminGuard> </UserGuard>
     | list{"register"} => <UserGuard> <AdminGuard> <Register /> </AdminGuard> </UserGuard>
     | list{"admin_login"} => <UserGuard> <AdminGuard> <AdminLogin /> </AdminGuard> </UserGuard>
-    // | list{"test"} => <Test />
-    // | list{"test2"} => <Test2 />
     | list{"admin"} => <AllowAdminGuard> <AdminPage /> </AllowAdminGuard>
     | _ => <>
         <h2 style={ReactDOM.Style.make(~margin="30px", ())}>
