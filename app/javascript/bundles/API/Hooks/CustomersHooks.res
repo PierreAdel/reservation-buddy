@@ -1,5 +1,5 @@
 open Customer
-
+open Endpoints
 module Fetch = {
   type response
 
@@ -11,7 +11,7 @@ module CustomersHooks = {
   let useGetCustomersHook = (search, page, limit, sort) => {
     let fetchCustomers = (_): Js.Promise.t<Customer.customers> => {
       Fetch.fetch(
-        `/api/v1/customers?search=${search}&page=${page->Belt.Int.toString}&limit=${limit->Belt.Int.toString}&sort=${sort}`,
+        `${Endpoints.customersEndpoint}?search=${search}&page=${page->Belt.Int.toString}&limit=${limit->Belt.Int.toString}&sort=${sort}`,
       )->Promise.then(Fetch.json)
     }
     ReactQuery.useQuery(

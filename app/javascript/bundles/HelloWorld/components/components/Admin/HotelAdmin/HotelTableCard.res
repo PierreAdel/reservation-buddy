@@ -1,27 +1,15 @@
 open Hotel
+open HotelsHooks
 @react.component
 let make = (~el: Hotel.hotel) => {
   let (show, setShow) = React.useState(_ => true)
-  let handleDelete = slug => {
-    let _ =
-      Fetch.fetchWithInit(
-        `/api/v1/hotels/${slug}`,
-        Fetch.RequestInit.make(
-          ~method_=Delete,
-          ~headers=Fetch.HeadersInit.make({"Content-Type": "application/json"}),
-          (),
-        ),
-      )->Js.Promise.then_(Fetch.Response.json, _)
-    setShow(_ => false)
-    // RescriptReactRouter.replace("/admin?table=hotels")
-  }
 
   {
     show
       ? <tr key={el.id->Belt.Int.toString}>
           <td
             style={ReactDOM.Style.make(~textDecoration="underline", ~cursor="pointer", ())}
-            onClick={_ => handleDelete(el.slug)}>
+            onClick={_ => HotelsHooks.useHandleDeleteHotel(el.slug, setShow)}>
             {"Delete"->React.string}
           </td>
           <td> {el.id->Belt.Int.toString->React.string} </td>

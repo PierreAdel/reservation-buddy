@@ -13,17 +13,10 @@ let make = () => {
   let (search, setSearch) = React.useState(_ => "")
   let (page, setPage) = React.useState(_ => 1)
   // let url = RescriptReactRouter.useUrl()
-  let handleChangeSort = event => {
-    let newValue = ReactEvent.Form.target(event)["value"]
-    setSort(newValue)
-  }
-  let handleChangeSearch = event => {
-    let newValue = ReactEvent.Form.target(event)["value"]
-    setSearch(newValue)
-  }
-  let maxPage = 5
+
+  // let maxPage = 5
   let handleChangePage = newValue => {
-    if newValue > 0 && newValue <= maxPage {
+    if newValue > 0 {
       setPage(_ => newValue)
     }
   }
@@ -55,27 +48,27 @@ let make = () => {
           page={page}
           search={search}
           handleChangePage={handleChangePage}
-          handleChangeSearch={handleChangeSearch}
+          handleChangeSearch={e => setSearch(ReactEvent.Form.target(e)["value"])}
           sort={sort}
-          handleChangeSort={handleChangeSort}
+          handleChangeSort={e => setSort(ReactEvent.Form.target(e)["value"])}
         />
       } else if table == "hotels" {
         <HotelCompleteTable
           page={page}
           search={search}
           handleChangePage={handleChangePage}
-          handleChangeSearch={handleChangeSearch}
+          handleChangeSearch={e => setSearch(ReactEvent.Form.target(e)["value"])}
           sort={sort}
-          handleChangeSort={handleChangeSort}
+          handleChangeSort={e => setSort(ReactEvent.Form.target(e)["value"])}
         />
       } else {
         <UserCompleteTable
           page={page}
           search={search}
           handleChangePage={handleChangePage}
-          handleChangeSearch={handleChangeSearch}
+          handleChangeSearch={e => setSearch(ReactEvent.Form.target(e)["value"])}
           sort={sort}
-          handleChangeSort={handleChangeSort}
+          handleChangeSort={e => setSort(ReactEvent.Form.target(e)["value"])}
         />
       }}
     </div>

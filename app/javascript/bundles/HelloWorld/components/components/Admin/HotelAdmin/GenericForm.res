@@ -1,3 +1,4 @@
+open HotelsHooks
 type input = {
   label: string,
   type_: string,
@@ -19,65 +20,46 @@ let make = (~clicked) => {
       label: "Hotel name",
       type_: "text",
       value: hotelName,
-      handleChange: event => setHotelName(ReactEvent.Form.target(event)["value"]),
+      handleChange: e => setHotelName(ReactEvent.Form.target(e)["value"]),
       required: true,
     },
     {
       label: "Hotel description",
       type_: "text",
       value: hotelDescription,
-      handleChange: event => setHotelDescription(ReactEvent.Form.target(event)["value"]),
+      handleChange: e => setHotelDescription(ReactEvent.Form.target(e)["value"]),
       required: true,
     },
     {
       label: "Price per night",
       type_: "number",
       value: pricePerNight->Belt.Float.toString,
-      handleChange: event => setPricePerNight(ReactEvent.Form.target(event)["value"]),
+      handleChange: e => setPricePerNight(ReactEvent.Form.target(e)["value"]),
       required: true,
     },
     {
       label: "Cover image url",
       type_: "text",
       value: coverImageUrl,
-      handleChange: event => setCoverImageUrl(ReactEvent.Form.target(event)["value"]),
+      handleChange: e => setCoverImageUrl(ReactEvent.Form.target(e)["value"]),
       required: true,
     },
     {
       label: "City",
       type_: "text",
       value: city,
-      handleChange: event => setCity(ReactEvent.Form.target(event)["value"]),
+      handleChange: e => setCity(ReactEvent.Form.target(e)["value"]),
       required: true,
     },
     {
       label: "Score",
       type_: "number",
       value: score->Belt.Float.toString,
-      handleChange: event => setScore(ReactEvent.Form.target(event)["value"]),
+      handleChange: e => setScore(ReactEvent.Form.target(e)["value"]),
       required: true,
     },
   ]
 
-  let handleAdd = _ => {
-    let payload = Js.Dict.empty()
-    Js.Dict.set(payload, "hotel_name", Js.Json.string(hotelName))
-    Js.Dict.set(payload, "description", Js.Json.string(hotelDescription))
-    Js.Dict.set(payload, "price_per_night", Js.Json.string(pricePerNight->Belt.Float.toString))
-    Js.Dict.set(payload, "cover_image_url", Js.Json.string(coverImageUrl))
-    Js.Dict.set(payload, "city", Js.Json.string(city))
-    Js.Dict.set(payload, "score", Js.Json.string(score->Belt.Float.toString))
-    let _ =
-      Fetch.fetchWithInit(
-        `/api/v1/hotels`,
-        Fetch.RequestInit.make(
-          ~method_=Post,
-          ~body=Fetch.BodyInit.make(Js.Json.stringify(Js.Json.object_(payload))),
-          ~headers=Fetch.HeadersInit.make({"Content-Type": "application/json"}),
-          (),
-        ),
-      )->Js.Promise.then_(Fetch.Response.json, _)
-  }
   let isDisabled = () => {
     hotelName == "" ||
     hotelDescription == "" ||
@@ -107,7 +89,14 @@ let make = (~clicked) => {
       <button
         disabled={isDisabled()}
         onClick={e => {
-          handleAdd(e)
+          HotelsHooks.useHandleAddHotel(
+            hotelName,
+            hotelDescription,
+            pricePerNight,
+            coverImageUrl,
+            city,
+            score,
+          )
           clicked(e)
         }}
         className={`GenericFormSubmit ${isDisabled() ? "Disabled" : ""}`}>

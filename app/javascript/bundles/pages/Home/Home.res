@@ -1,21 +1,20 @@
-// type person = {"completed": bool, "id": int, "title": string, "userId": int}
+open SessionsHooks
 %%raw("import './Home.css'")
 @react.component
 let make = () => {
   let (city, setCity) = React.useState(_ => "")
   let (dateFrom, setDateFrom) = React.useState(_ => "")
   let (numOfNights, setNumOfNights) = React.useState(_ => 0)
+  let userLoggedInHook = SessionsHooks.useGetUserLoggedInHook()
 
-  let handleChange = event => {
-    let newValue = ReactEvent.Form.target(event)["value"]
-    setCity(newValue)
+  let resetSearch = _ => {
+    setCity(_ => "")
+    setDateFrom(_ => "")
+    setNumOfNights(_ => 0)
+    RescriptReactRouter.push("/")
   }
-  let handleChangeFrom = event => {
-    let newValue = ReactEvent.Form.target(event)["value"]
-    setDateFrom(newValue)
-  }
-  let handleChangeNumOfNights = event => {
-    let newValue = ReactEvent.Form.target(event)["value"]
+  let handleChangeNumOfNights = e => {
+    let newValue = ReactEvent.Form.target(e)["value"]
     if newValue > 0 && newValue <= 100 {
       setNumOfNights(newValue)
     }
@@ -28,14 +27,18 @@ let make = () => {
   }, (city, dateFrom, numOfNights))
 
   <div className={"HomeContainer"}>
-    <NavigationBar />
+    <NavigationBar resetSearch={resetSearch} />
     <div className={"MiddleArea"}>
       <SearchArea
         city={city}
         dateFrom={dateFrom}
         numOfNights={numOfNights}
-        handleChange={handleChange}
-        handleChangeFrom={handleChangeFrom}
+        handleChange={e => setCity(ReactEvent.Form.target(e)["value"])}
+        handleChangeFrom={e => {
+          if Js.Date.fromString(ReactEvent.Form.target(e)["value"]) > Js.Date.make() {
+            setDateFrom(ReactEvent.Form.target(e)["value"])
+          }
+        }}
         handleChangeNumOfNights={handleChangeNumOfNights}
       />
       {city != "" && dateFrom != "" && numOfNights > 0
@@ -44,7 +47,13 @@ let make = () => {
             <PopularDestinations setCity={setCity} />
             <LineArea />
             <PopularSnapshotArea setCity={setCity} />
-            <PastReservations />
+            {switch userLoggedInHook {
+            | {isLoading: true} => React.null
+            | {data: Some(result), isLoading: false, isError: false} =>
+              result.logged_in ? <PastReservations /> : React.null
+
+            | _ => React.null
+            }}
           </>}
     </div>
   </div>

@@ -1,27 +1,12 @@
 open Hotel
 open SessionsHooks
+open ReservationsHooks
 
 @react.component
 let make = (~el: Hotel.hotel, ~dateFrom: string, ~numOfNights: int) => {
   let userLoggedInHook = SessionsHooks.useGetUserLoggedInHook()
 
   let (show, setShow) = React.useState(_ => true)
-  let handleSubmit = _ => {
-    let payload = Js.Dict.empty()
-    Js.Dict.set(payload, "date_from", Js.Json.string(dateFrom))
-    Js.Dict.set(payload, "number_of_days", Js.Json.string(numOfNights->Belt.Int.toString))
-    let _ =
-      Fetch.fetchWithInit(
-        `/api/v1/reservations/${el.slug}`,
-        Fetch.RequestInit.make(
-          ~method_=Post,
-          ~body=Fetch.BodyInit.make(Js.Json.stringify(Js.Json.object_(payload))),
-          ~headers=Fetch.HeadersInit.make({"Content-Type": "application/json"}),
-          (),
-        ),
-      )->Js.Promise.then_(Fetch.Response.json, _)
-    setShow(_ => false)
-  }
 
   {
     show
@@ -39,7 +24,10 @@ let make = (~el: Hotel.hotel, ~dateFrom: string, ~numOfNights: int) => {
           | {isLoading: true} => React.null
           | {data: Some(result), isLoading: false, isError: false} =>
             result.logged_in
-              ? <button onClick={handleSubmit} className={"ReserveButton"}>
+              ? <button
+                  onClick={_ =>
+                    ReservationsHooks.useHandleReserveHook(el.slug, dateFrom, numOfNights, setShow)}
+                  className={"ReserveButton"}>
                   {"Reserve Now"->React.string}
                 </button>
               : <button className={"ReserveButton"}>
