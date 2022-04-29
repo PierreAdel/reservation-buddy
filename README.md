@@ -55,8 +55,8 @@ You can edit the ERD, you can request edit access through this [link](https://lu
   - Login to the admin panel.
   - Add new hotel.
   - Delete a hotel.
-  - Browse, sort, and search all hotels, customers, and reservations.
-  - Logout from the admin panel.
+  - Browse, sort, paginate, and search all hotels, customers, and reservations.
+  - Logout.
 
 - As a customer you can:
   - Register as user.
@@ -64,7 +64,7 @@ You can edit the ERD, you can request edit access through this [link](https://lu
   - Search for a hotel by name or city.
   - Reserve a hotel.
   - Browse your past reservations.
-  - Logout as user.
+  - Logout.
 
 ## Contributing
 
