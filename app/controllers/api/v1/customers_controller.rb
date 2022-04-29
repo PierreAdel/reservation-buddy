@@ -5,9 +5,10 @@ module Api
 
       def index
         customers =
-          Customer.all
+          Customer
+            .all
             # .limit(limit)
-            # .offset(offset)
+            .offset(params.fetch(:page, 1).to_i * limit.to_i - limit.to_i)
             # .order(sort, :desc)
             .where("name LIKE '%#{params.fetch(:search, '')}%'")
 
