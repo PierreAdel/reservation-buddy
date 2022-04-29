@@ -6,9 +6,9 @@ module Api
         hotels =
           Hotel
             .all
-            # .limit(limit)
+            .limit(limit)
             .offset(offset)
-            .order(sort, :desc)
+            # .order(sort, :desc)
             .where(
               "city LIKE '%#{params.fetch(:search, '')}%' OR hotel_name LIKE '%#{params.fetch(:search, '')}%'",
             )
