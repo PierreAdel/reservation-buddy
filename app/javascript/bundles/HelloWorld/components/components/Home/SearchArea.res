@@ -13,24 +13,33 @@ let make = (
         {"Where to?"->React.string}
       </h3>
       <div className={"InputArea"}>
-        <input
-        // style={ReactDOM.Style.make(~width="35%", ())}
-          placeholder="e.g. Cairo"
-          className={"SearchInput"}
-          value={city}
-          onChange={handleChange}
-          type_="text"
-        />
-        <input
-          className={"SearchInput"} value={dateFrom} onChange={handleChangeFrom} type_="date"
-        />
-        <input
-          placeholder="Number of nights"
-          className={"SearchInput"}
-          value={numOfNights->Belt.Int.toString}
-          onChange={handleChangeNumOfNights}
-          type_="number"
-        />
+        <div className={"ColumnArea"}>
+          <p className={"SearchInputLabel"}> {"Destination"->React.string} </p>
+          <input
+          // style={ReactDOM.Style.make(~width="35%", ())}
+            placeholder="e.g. Cairo"
+            className={"SearchInput"}
+            value={city}
+            onChange={handleChange}
+            type_="text"
+          />
+        </div>
+        <div className={"ColumnArea"}>
+          <p className={"SearchInputLabel"}> {"Starting date"->React.string} </p>
+          <input
+            className={"SearchInput"} value={dateFrom} onChange={handleChangeFrom} type_="date"
+          />
+        </div>
+        <div className={"ColumnArea"}>
+          <p className={"SearchInputLabel"}> {"Number of nights"->React.string} </p>
+          <input
+            placeholder="Number of nights"
+            className={"SearchInput"}
+            value={numOfNights->Belt.Int.toString}
+            onChange={handleChangeNumOfNights}
+            type_="number"
+          />
+        </div>
         // <button
         //   className={"SearchButton"}
         //   disabled={city == "" || dateFrom == "" || numOfNights <= 0}
