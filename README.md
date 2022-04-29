@@ -21,6 +21,8 @@ yarn run re:start
 rails s
 ```
 
+Then access the website through this link [http://localhost:3000](http://localhost:3000).
+
 ## To run the test suite
 
 ```bash
