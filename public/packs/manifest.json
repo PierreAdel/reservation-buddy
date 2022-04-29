@@ -12,15 +12,15 @@
     },
     "hello-world-bundle": {
       "js": [
-        "/packs/js/hello-world-bundle-ad924af8c0675c9c6a55.js"
+        "/packs/js/hello-world-bundle-515444f218825e6d7d95.js"
       ],
       "js.map": [
-        "/packs/js/hello-world-bundle-ad924af8c0675c9c6a55.js.map"
+        "/packs/js/hello-world-bundle-515444f218825e6d7d95.js.map"
       ]
     }
   },
-  "hello-world-bundle.js": "/packs/js/hello-world-bundle-ad924af8c0675c9c6a55.js",
-  "hello-world-bundle.js.map": "/packs/js/hello-world-bundle-ad924af8c0675c9c6a55.js.map",
+  "hello-world-bundle.js": "/packs/js/hello-world-bundle-515444f218825e6d7d95.js",
+  "hello-world-bundle.js.map": "/packs/js/hello-world-bundle-515444f218825e6d7d95.js.map",
   "media/images/bg.jpg": "/packs/media/images/bg-89722c1b.jpg",
   "media/images/bg2.jpg": "/packs/media/images/bg2-83031f48.jpg"
 }

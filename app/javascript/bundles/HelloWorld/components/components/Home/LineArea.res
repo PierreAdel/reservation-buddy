@@ -4,7 +4,7 @@ let make = () => {
     <h4 className={"KhatTitleText"}> {"Why book with us?"->React.string} </h4>
     <div className={"InfoCards"}>
       <div className={"InfoCard"}>
-        <img src={"../../../../../../assets/bg2.jpg"} className={"InfoImage"} />
+        <img src={"/four.jpg"} className={"InfoImage"} />
         <p className={"InfoText"}>
           <h4 className={"InfoTextHeader"}> {"Free cancellation"->React.string} </h4>
           <p className={"InfoTextParagraph"}> {"On most hotels"->React.string} </p>
