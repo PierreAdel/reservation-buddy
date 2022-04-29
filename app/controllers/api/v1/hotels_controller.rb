@@ -13,11 +13,7 @@ module Api
               "city LIKE '%#{params.fetch(:search, '')}%' OR hotel_name LIKE '%#{params.fetch(:search, '')}%'",
             )
 
-        render json: {
-                 pages: (Hotel.all.length.to_f / limit).ceil(0),
-                 page: params.fetch(:page, 1).to_i,
-                 data: HotelsRepresenter.new(hotels).as_json,
-               }
+        render json: { data: HotelsRepresenter.new(hotels).as_json }
       end
 
       def show
