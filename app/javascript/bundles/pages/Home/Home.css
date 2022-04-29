@@ -54,14 +54,10 @@ a {
   padding: 15px 20px;
 }
 
+.RightArea {
+  width: auto;
+}
 .Logo {
-  /* background-image: url(${LoginImage}); */
-  /* background-image: url("../../assets/bg2.jpg"); */
-  /* background-color: #cccccc; */
-
-  /* background-position: center; */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
   aspect-ratio: 1.1/1;
   width: 45px;
   border-radius: 100%;
@@ -266,7 +262,7 @@ a {
   outline: none;
   border: 1px solid grey;
   background-color: #f6f4f3;
-  width: 21%;
+  /* width: 21%; */
 }
 .SearchInput:focus {
   border: 1px solid #e07751;
@@ -298,6 +294,16 @@ a {
   font-weight: 600;
   margin: 0;
   margin-bottom: 20px;
+}
+.ColumnArea {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+}
+.SearchInputLabel {
+  font-size: 14px;
+  color: grey;
+  font-weight: 500;
 }
 .PopularText {
   font-size: 22px;
@@ -335,8 +341,11 @@ a {
   .Popular {
     width: 95%;
   }
-  .SearchInput {
+  /* .SearchInput {
     width: 26%;
+  } */
+  .ColumnArea {
+    width: 30%;
   }
   .SearchButton {
     width: 15%;
@@ -404,8 +413,11 @@ a {
   .Popular {
     width: 95%;
   }
-  .SearchInput {
+  /* .SearchInput {
     width: 26%;
+  } */
+  .ColumnArea {
+    width: 32%;
   }
   .SearchButton {
     width: 15%;
@@ -490,7 +502,11 @@ a {
   .InputArea {
     flex-direction: column;
   }
-  .SearchInput {
+  /* .SearchInput {
+    width: 100%;
+    margin-bottom: 20px;
+  } */
+  .ColumnArea {
     width: 100%;
     margin-bottom: 20px;
   }
