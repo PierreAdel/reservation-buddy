@@ -196,7 +196,7 @@ GEM
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
     semantic_range (3.0.0)
-    shakapacker (6.2.0)
+    shakapacker (6.0.0.rc.13)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
@@ -257,7 +257,7 @@ DEPENDENCIES
   rails (~> 7.0.2, >= 7.0.2.3)
   react_on_rails (= 13.0.2)
   rspec-rails
-  shakapacker (= 6.2)
+  shakapacker (= 6.0.0.rc.13)
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
