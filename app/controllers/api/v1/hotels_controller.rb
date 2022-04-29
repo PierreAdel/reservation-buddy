@@ -65,6 +65,19 @@ module Api
                  status: :unprocessable_entity
         end
       end
+
+      def hotel_params
+        params
+          .require(:hotel)
+          .permit(
+            :hotel_name,
+            :cover_image_url,
+            :description,
+            :city,
+            :score,
+            :price_per_night,
+          )
+      end
     end
   end
 end
