@@ -15,6 +15,8 @@
   padding-top: 50px;
   text-align: center;
   background-color: #242527;
+  position: sticky;
+  top: 0;
 }
 .LeftText {
   margin-bottom: 50px;
