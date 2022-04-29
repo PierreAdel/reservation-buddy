@@ -5,18 +5,23 @@
     "re:build": "yarn clean && rescript build"
   },
   "dependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/plugin-transform-runtime": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
+    "@babel/runtime": "^7.17.9",
     "@glennsl/bs-json": "^5.0.4",
     "@rails/webpacker": "5.4.3",
     "@rescript/react": "^0.10.3",
     "@rescriptbr/react-query": "^0.0.1",
     "@rescriptbr/reform": "^12.0.0-0",
     "@ryyppy/rescript-promise": "^2.1.0",
+    "babel-loader": "^8.2.5",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-runtime": "7.0.0-beta.3",
     "bs-fetch": "^0.6.2",
     "check-peer-dependencies": "^4.1.0",
-    "compression-webpack-plugin": "9.2.0",
+    "compression-webpack-plugin": "^9.2.0",
     "re-formality": "^4.0.0-beta.17",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -26,16 +31,18 @@
     "rescript": "^9.1.4",
     "rescript-react-on-rails": "^1.0.0",
     "shakapacker": "6.0.0",
+    "terser-webpack-plugin": "^5.3.1",
     "typescript": "4.7.0-dev.20220429",
-    "webpack": "4.46.0",
-    "webpack-assets-manifest": "5.1.0",
-    "webpack-cli": "4.9.2",
-    "webpack-merge": "5.8.0"
+    "webpack": "^5.72.0",
+    "webpack-assets-manifest": "^5.1.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-merge": "^5.8.0",
+    "webpack-sources": "^3.2.3"
   },
   "devDependencies": {
     "@prettier/plugin-ruby": "^2.1.0",
     "lenses-ppx": "^6.1.10",
     "prettier": "^2.6.2",
-    "webpack-dev-server": "4.3"
+    "webpack-dev-server": "^4.8.1"
   }
 }
