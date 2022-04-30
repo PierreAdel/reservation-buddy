@@ -2,6 +2,8 @@
 
 Reservation Buddy is an hotel reservation system demo made with [shakacode/rescript-react-on-rails](https://github.com/shakacode/rescript-react-on-rails).
 
+Checkout the app [on heroku](https://reservation-buddy-shakacode.herokuapp.com/).
+
 ## Installation
 
 ```bash
