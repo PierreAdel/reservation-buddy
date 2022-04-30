@@ -9,7 +9,7 @@ module Api
             .all
             .limit(limit)
             .offset(offset)
-            .order(sort, :desc)
+            .order("#{sort} DESC")
             .where("name LIKE '%#{params.fetch(:search, '')}%'")
 
         render json: {
