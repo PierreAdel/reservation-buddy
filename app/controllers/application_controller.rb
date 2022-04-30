@@ -6,15 +6,29 @@ class ApplicationController < ActionController::Base
   protected
 
   def limit
-    [params.fetch(:limit, MAX_PAGINATION_LIMIT).to_i, MAX_PAGINATION_LIMIT].min
+    [
+      [
+        params.fetch(:limit, MAX_PAGINATION_LIMIT).to_i,
+        MAX_PAGINATION_LIMIT,
+      ].min,
+      1,
+    ].max
+  end
+
+  def page
+    [params.fetch(:page, 1).to_i, 1].max
   end
 
   def offset
-    params.fetch(:page, 1).to_i * limit.to_i - limit.to_i
+    page * limit.to_i - limit.to_i
   end
 
-  def sort
-    params.fetch(:sort, 'created_at')
+  def sort(sort_array)
+    if sort_array.include? params.fetch(:sort, 'created_at')
+      params.fetch(:sort, 'created_at')
+    else
+      'created_at'
+    end
   end
 
   def authenticate_admin
