@@ -6,11 +6,15 @@ module Api
 
       def get_all_reservations
         reservations =
-          Reservation.all.limit(limit).offset(offset).order("#{sort} DESC")
+          Reservation
+            .all
+            .limit(limit)
+            .offset(offset)
+            .order("#{sort(Reservation.column_names)} ASC")
 
         render json: {
                  pages: (Reservation.all.length.to_f / limit).ceil(0),
-                 page: params.fetch(:page, 1).to_i,
+                 page: page,
                  data: ReservationsRepresenter.new(reservations).as_json,
                }
       end
