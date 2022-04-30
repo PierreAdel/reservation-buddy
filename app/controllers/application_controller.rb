@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   MAX_PAGINATION_LIMIT = 100
 
-  private
+  protected
 
   def limit
     [params.fetch(:limit, MAX_PAGINATION_LIMIT).to_i, MAX_PAGINATION_LIMIT].min
