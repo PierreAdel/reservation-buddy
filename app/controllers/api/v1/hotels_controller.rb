@@ -8,14 +8,14 @@ module Api
             .all
             .limit(limit)
             .offset(offset)
-            .order("#{sort} DESC")
+            .order("#{sort(Hotel.column_names)} ASC")
             .where(
               "city LIKE '%#{params.fetch(:search, '')}%' OR hotel_name LIKE '%#{params.fetch(:search, '')}%'",
             )
 
         render json: {
                  pages: (Hotel.all.length.to_f / limit).ceil(0),
-                 page: params.fetch(:page, 1).to_i,
+                 page: page,
                  data: HotelsRepresenter.new(hotels).as_json,
                }
       end
