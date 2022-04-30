@@ -8,8 +8,8 @@ module Api
           Customer
             .all
             .limit(limit)
-            .offset(params.fetch(:page, 1).to_i * limit.to_i - limit.to_i)
-            # .order(sort, :desc)
+            .offset(offset)
+            .order("#{sort} DESC")
             .where("name LIKE '%#{params.fetch(:search, '')}%'")
 
         render json: {

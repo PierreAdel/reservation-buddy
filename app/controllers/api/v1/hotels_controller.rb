@@ -1,19 +1,23 @@
 module Api
   module V1
     class HotelsController < ApplicationController
-      # before_action :authenticate_admin, only: %i[create update destroy]
+      before_action :authenticate_admin, only: %i[create update destroy]
       def index
         hotels =
           Hotel
             .all
             .limit(limit)
             .offset(offset)
-            .order(sort, :desc)
+            .order("#{sort} DESC")
             .where(
               "city LIKE '%#{params.fetch(:search, '')}%' OR hotel_name LIKE '%#{params.fetch(:search, '')}%'",
             )
 
-        render json: { data: HotelsRepresenter.new(hotels).as_json }
+        render json: {
+                 pages: (Hotel.all.length.to_f / limit).ceil(0),
+                 page: params.fetch(:page, 1).to_i,
+                 data: HotelsRepresenter.new(hotels).as_json,
+               }
       end
 
       def show
@@ -61,6 +65,8 @@ module Api
                  status: :unprocessable_entity
         end
       end
+
+      private
 
       def hotel_params
         params

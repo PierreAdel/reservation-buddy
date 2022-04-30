@@ -6,7 +6,7 @@ module Api
 
       def get_all_reservations
         reservations =
-          Reservation.all.limit(limit).offset(offset).order(sort, :desc)
+          Reservation.all.limit(limit).offset(offset).order("#{sort} DESC")
 
         render json: {
                  pages: (Reservation.all.length.to_f / limit).ceil(0),
