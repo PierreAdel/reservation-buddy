@@ -46,7 +46,6 @@ gem 'tzinfo-data', '>= 1.2019.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-gem 'prettier'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -75,6 +74,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'prettier'
 end
 
 group :production do
